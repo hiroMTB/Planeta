@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxTextureRecorder.h"
 #include "Renderable.h"
+#include "ofxAssimpModelLoader.h"
 
 namespace mikromedas{
 
@@ -15,5 +16,9 @@ namespace mikromedas{
         void update();
         void draw();
         void exit();
+        
+        ofEasyCam cam;
+        ofxAssimpModelLoader model;
+
     };
 }

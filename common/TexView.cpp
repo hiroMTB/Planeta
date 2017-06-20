@@ -1,6 +1,7 @@
 #include "TexView.h"
 #include "ScreenDef.h"
 #include "Util.h"
+#include "ofApp.h"
 
 using namespace mikromedas;
 using namespace ScreenDef;
@@ -16,7 +17,7 @@ void TexView::setup(){
 }
 
 void TexView::update(){
-    save();
+    save(ofApp::get()->frame);
 }
 
 void TexView::draw(){

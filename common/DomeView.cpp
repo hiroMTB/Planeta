@@ -1,6 +1,7 @@
 #include "DomeView.h"
 #include "ScreenDef.h"
 #include "Util.h"
+#include "ofApp.h"
 
 using namespace mikromedas;
 using namespace ScreenDef;
@@ -13,22 +14,33 @@ void DomeView::setup(){
     ofSetBackgroundColor(0);
     ofSetFrameRate(fps);
     ofSetCircleResolution(160);
+    ofEnableDepthTest();
+    cam.setDistance(100);
+
 }
 
 void DomeView::update(){
-    save();
+    save(ofApp::get()->frame);
 }
 
 void DomeView::draw(){
     
     begin();
+    
+    cam.begin();
+    ofRotateXRad(.5);
+    ofRotateYRad(-.5);
+
     ofPushMatrix();
     ofBackground(0);
-    ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
     
+    ofNoFill();
+    ofSetColor(255);
     ofDrawSphere(0, 0, 150);
     
     ofPopMatrix();
+    
+  	cam.end();
     
     end();
     

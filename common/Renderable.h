@@ -29,12 +29,13 @@ namespace mikromedas{
             recorder.setup(settings);
             
             parameters.setName("render param");
-            parameters.add(start.set("start",false));
+            parameters.add(render.set("render",false));
             parameters.add(frameRate.set("frameRate", 0));
             parameters.add(texCopyTime.set("texCopyTime", 0));
             parameters.add(gpuDownTime.set("gpuDownTime", 0));
             parameters.add(encodeTime.set("encodeTime", 0));
             parameters.add(fileSaveTime.set("fileSaveTime", 0));
+
             gui.setup(parameters);
         }
         
@@ -58,21 +59,24 @@ namespace mikromedas{
         }
         void drawGui(){
             frameRate.set(ofGetFrameRate());
-            
+            texCopyTime.set( recorder.getAvgTimeTextureCopy() );
+            gpuDownTime.set( recorder.getAvgTimeGpuDownload());
+            encodeTime.set( recorder.getAvgTimeEncode());
+            fileSaveTime.set( recorder.getAvgTimeSave());
             gui.draw();
         }
         
-        void save(){
-            if(start.get())
-                recorder.save(fbo.getTexture());
+        void save(int frame){
+            if(render.get())
+                recorder.save(fbo.getTexture(), frame);
         }
  
         void startRender(){
-            start.set(true);
+            render.set(true);
         }
         
         void stopRender(){
-            start.set(false);
+            render.set(false);
             recorder.stop();
         }
         
@@ -81,7 +85,7 @@ namespace mikromedas{
         ofxTextureRecorder recorder;
         ofFbo fbo;
         ofParameterGroup   parameters;
-        ofParameter<bool>  start;
+        ofParameter<bool>  render;
         ofParameter<float> frameRate;
         ofParameter<float> texCopyTime;
         ofParameter<float> gpuDownTime;
