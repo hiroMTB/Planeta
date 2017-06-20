@@ -12,7 +12,7 @@ void Util::drawInfo(){
     stringstream ss;
     ss << "fps       : " << ofGetFrameRate() << "\n";
     ss << "frame     : " << ofApp::get()->frame << "\n";
-    ss << "Expoprter : " << (ofApp::get()->exporter.isExporting()?"ON" : "OFF") << "\n";
+    //ss << "Expoprter : " << (ofApp::get()->recorder. ()?"ON" : "OFF") << "\n";
     ofDrawBitmapString(ss.str(), 10, 20);
 }
 
@@ -85,28 +85,6 @@ void Util::eraseChar(string &text, char eraseChar){
 
 void Util::eraseLineBreak(string &text){
     eraseChar(text, '\n');
-}
-
-void Util::stringFit(string & text, const ofTrueTypeFontCustom& font, float fitWidth){
-    
-    if(fitWidth<=0 || text.size()<=1) return;
-    
-    float width = 0;
-    eraseLineBreak(text);
-    
-    for(int i=0; i<text.size()-1; i++){
-        float w = font.getCharWidth(text[i],text[i+1]);
-
-        if(w>0){
-            width += w;
-            //cout << w << ", " << width << endl;
-            if(width >= fitWidth){
-                text.insert(i+1, "\n");
-                i++;
-                width = 0;
-            }
-        }
-    }
 }
 
 filesystem::path Util::getResFolder(){

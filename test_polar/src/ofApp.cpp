@@ -1,9 +1,10 @@
+#define MAX_QUALITY 1
+#define RENDER 1
+
 #include "ofApp.h"
 #include "Util.h"
 #include "FontManager.h"
 #include "ScreenDef.h"
-
-//#define USE_OFX_TEXTURE_RECORDER 1
 
 using namespace ScreenDef;
 
@@ -15,35 +16,28 @@ void ofApp::setup(){
     ofSetFullscreen(false);
     ofSetLogLevel(OF_LOG_NOTICE);
     
-#ifdef USE_OFX_TEXTURE_RECORDER
     fbo.allocate(renderW, renderH, GL_RGB);
     ofxTextureRecorder::Settings settings(fbo.getTexture());
     settings.imageFormat = OF_IMAGE_FORMAT_PNG;
     settings.numThreads = 4;
     settings.maxMemoryUsage = 9000000000;
     recorder.setup(settings);
-#else
-    exporter.setup(renderW, renderH, fps, GL_RGB, 4);
-    exporter.setOutputDir("render");
-    exporter.setAutoExit(true);
-    exporter.setOverwriteSequence(true);
-    exporter.startExport();
-#endif
     
 }
 
 void ofApp::update(){
     
     frame++;
+    
+#ifdef RENDER
+    recorder.save(fbo.getTexture());
+#endif
+    
 }
 
 void ofApp::draw(){
 
-#ifdef USE_OFX_TEXTURE_RECORDER
     fbo.begin();
-#else
-    exporter.begin();
-#endif
     ofPushMatrix();
     ofBackground(0);
     ofTranslate(centerX, centerY);
@@ -52,10 +46,9 @@ void ofApp::draw(){
     ofFill();
     ofDrawCircle(0, 0, renderW/2);
     
-    //if(!exporter.isExporting())
     {
         ofSetColor(0,0,255);
-        ofSetLineWidth(3);
+        ofSetLineWidth(1);
         ofNoFill();
         float rad = renderW/2;
         for(int i=0; i<10; i++){
@@ -71,22 +64,22 @@ void ofApp::draw(){
             ofPopMatrix();
         }
     }
+    
     ofPopMatrix();
     
-#ifdef USE_OFX_TEXTURE_RECORDER
     fbo.end();
-    recorder.save(fbo.getTexture());
-#else
-    exporter.end();
-#endif
-    
+
     ofBackground(20);
+    ofRectangle r(0, 0, fbo.getWidth(), fbo.getHeight());
+    r.scaleTo( ofRectangle(0, 0, ofGetWidth(), ofGetHeight()) );
+    fbo.draw(r);
     
-#ifdef USE_OFX_TEXTURE_RECORDER
-    fbo.draw(0, 0, ofGetWindowWidth(), ofGetWindowWidth());
-#else
-    exporter.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight() );
-#endif
+    Util::drawInfo();
+}
+
+void ofApp::exit(){
+
+    recorder.stop();
 }
 
 int main(){

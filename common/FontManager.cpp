@@ -1,17 +1,17 @@
 #include "FontManager.h"
 #include "Util.h"
 
-unordered_map<string, ofTrueTypeFontCustom> FontManager::font;
+unordered_map<string, ofTrueTypeFont> FontManager::font;
 unordered_map<string, ofRectangle> FontManager::bb;
 
 void FontManager::setup(float XL, float L, float M, float S, float SS){
     
     ofTrueTypeFont::setGlobalDpi(72);
     
-    font.insert( make_pair("XL", ofTrueTypeFontCustom() ) );
-    font.insert( make_pair("L", ofTrueTypeFontCustom() ) );
-    font.insert( make_pair("M", ofTrueTypeFontCustom() ) );
-    font.insert( make_pair("S", ofTrueTypeFontCustom() ) );
+    font.insert( make_pair("XL", ofTrueTypeFont() ) );
+    font.insert( make_pair("L", ofTrueTypeFont() ) );
+    font.insert( make_pair("M", ofTrueTypeFont() ) );
+    font.insert( make_pair("S", ofTrueTypeFont() ) );
     
     /*
      *      NOTICE when you see font loading error

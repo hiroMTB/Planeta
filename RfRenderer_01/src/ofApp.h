@@ -1,8 +1,12 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxTextureRecorder.h"
 #include "EasingPrm.h"
+#include "ofxGui.h"
+#include "TexView.h"
+#include "DomeView.h"
+
+using namespace mikromedas;
 
 class ofApp : public ofBaseApp{
     
@@ -16,14 +20,14 @@ public:
     void setup();
     void draw();
     void update();
-    void keyPressed(int key){};
+    void keyPressed(int key);
     void exit();
     
-    ofxTextureRecorder recorder;
-    ofFbo fbo;
-    
     int frame = -1;
-    
+    ofxPanel gui;
     vector<EasingPrm> anim;
+    
+    shared_ptr<TexView> texView;
+    shared_ptr<DomeView> domeView;
 };
 

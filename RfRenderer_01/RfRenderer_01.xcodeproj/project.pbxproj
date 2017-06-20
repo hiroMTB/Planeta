@@ -7,10 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		454408D61EF83B3000BCF9EE /* BigNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 454408C91EF83B3000BCF9EE /* BigNumber.cpp */; };
 		454408D71EF83B3000BCF9EE /* FontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 454408CC1EF83B3000BCF9EE /* FontManager.cpp */; };
 		454408D81EF83B3000BCF9EE /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 454408CE1EF83B3000BCF9EE /* Graph.cpp */; };
 		454408D91EF83B3000BCF9EE /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 454408D41EF83B3000BCF9EE /* Util.cpp */; };
+		459B1DC51EF95FE8003A3E3F /* TexView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DC31EF95FE8003A3E3F /* TexView.cpp */; };
+		459B1DDE1EF96296003A3E3F /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DC91EF96296003A3E3F /* ofxBaseGui.cpp */; };
+		459B1DDF1EF96296003A3E3F /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DCB1EF96296003A3E3F /* ofxButton.cpp */; };
+		459B1DE01EF96296003A3E3F /* ofxColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DCD1EF96296003A3E3F /* ofxColorPicker.cpp */; };
+		459B1DE11EF96296003A3E3F /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DD01EF96296003A3E3F /* ofxGuiGroup.cpp */; };
+		459B1DE21EF96296003A3E3F /* ofxInputField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DD21EF96296003A3E3F /* ofxInputField.cpp */; };
+		459B1DE31EF96296003A3E3F /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DD41EF96296003A3E3F /* ofxLabel.cpp */; };
+		459B1DE41EF96296003A3E3F /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DD61EF96296003A3E3F /* ofxPanel.cpp */; };
+		459B1DE51EF96296003A3E3F /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DD81EF96296003A3E3F /* ofxSlider.cpp */; };
+		459B1DE61EF96296003A3E3F /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DDA1EF96296003A3E3F /* ofxSliderGroup.cpp */; };
+		459B1DE71EF96296003A3E3F /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DDC1EF96296003A3E3F /* ofxToggle.cpp */; };
+		459B1DEB1EF9794F003A3E3F /* DomeView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DE91EF9794F003A3E3F /* DomeView.cpp */; };
+		459B1DEE1EF97B74003A3E3F /* Renderable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459B1DEC1EF97B74003A3E3F /* Renderable.cpp */; };
 		630D46DEBC2B6DC21603F304 /* ofxTextureRecorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34337B05439122D787E45362 /* ofxTextureRecorder.cpp */; };
 		B88A57B4B0BA6191EF3571E9 /* ofxSvg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9E16009E1772C6D00B20013 /* ofxSvg.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
@@ -59,8 +71,6 @@
 		375C1EB5EB0C6DB428BD21C4 /* xmlIO.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = xmlIO.h; path = ../../../addons/ofxSvg/libs/libxml2/include/libxml/xmlIO.h; sourceTree = SOURCE_ROOT; };
 		3DE7DC883ECEEEE46BC84579 /* pattern.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = pattern.h; path = ../../../addons/ofxSvg/libs/libxml2/include/libxml/pattern.h; sourceTree = SOURCE_ROOT; };
 		454408C81EF83B3000BCF9EE /* AnimationParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationParts.h; sourceTree = "<group>"; };
-		454408C91EF83B3000BCF9EE /* BigNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BigNumber.cpp; sourceTree = "<group>"; };
-		454408CA1EF83B3000BCF9EE /* BigNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigNumber.h; sourceTree = "<group>"; };
 		454408CB1EF83B3000BCF9EE /* EasingPrm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasingPrm.h; sourceTree = "<group>"; };
 		454408CC1EF83B3000BCF9EE /* FontManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FontManager.cpp; sourceTree = "<group>"; };
 		454408CD1EF83B3000BCF9EE /* FontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontManager.h; sourceTree = "<group>"; };
@@ -72,6 +82,33 @@
 		454408D31EF83B3000BCF9EE /* ScreenDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenDef.h; sourceTree = "<group>"; };
 		454408D41EF83B3000BCF9EE /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
 		454408D51EF83B3000BCF9EE /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		459B1DC31EF95FE8003A3E3F /* TexView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TexView.cpp; sourceTree = "<group>"; };
+		459B1DC41EF95FE8003A3E3F /* TexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexView.h; sourceTree = "<group>"; };
+		459B1DC91EF96296003A3E3F /* ofxBaseGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBaseGui.cpp; sourceTree = "<group>"; };
+		459B1DCA1EF96296003A3E3F /* ofxBaseGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBaseGui.h; sourceTree = "<group>"; };
+		459B1DCB1EF96296003A3E3F /* ofxButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxButton.cpp; sourceTree = "<group>"; };
+		459B1DCC1EF96296003A3E3F /* ofxButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxButton.h; sourceTree = "<group>"; };
+		459B1DCD1EF96296003A3E3F /* ofxColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxColorPicker.cpp; sourceTree = "<group>"; };
+		459B1DCE1EF96296003A3E3F /* ofxColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxColorPicker.h; sourceTree = "<group>"; };
+		459B1DCF1EF96296003A3E3F /* ofxGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxGui.h; sourceTree = "<group>"; };
+		459B1DD01EF96296003A3E3F /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGuiGroup.cpp; sourceTree = "<group>"; };
+		459B1DD11EF96296003A3E3F /* ofxGuiGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxGuiGroup.h; sourceTree = "<group>"; };
+		459B1DD21EF96296003A3E3F /* ofxInputField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxInputField.cpp; sourceTree = "<group>"; };
+		459B1DD31EF96296003A3E3F /* ofxInputField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxInputField.h; sourceTree = "<group>"; };
+		459B1DD41EF96296003A3E3F /* ofxLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxLabel.cpp; sourceTree = "<group>"; };
+		459B1DD51EF96296003A3E3F /* ofxLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLabel.h; sourceTree = "<group>"; };
+		459B1DD61EF96296003A3E3F /* ofxPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxPanel.cpp; sourceTree = "<group>"; };
+		459B1DD71EF96296003A3E3F /* ofxPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxPanel.h; sourceTree = "<group>"; };
+		459B1DD81EF96296003A3E3F /* ofxSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSlider.cpp; sourceTree = "<group>"; };
+		459B1DD91EF96296003A3E3F /* ofxSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSlider.h; sourceTree = "<group>"; };
+		459B1DDA1EF96296003A3E3F /* ofxSliderGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSliderGroup.cpp; sourceTree = "<group>"; };
+		459B1DDB1EF96296003A3E3F /* ofxSliderGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSliderGroup.h; sourceTree = "<group>"; };
+		459B1DDC1EF96296003A3E3F /* ofxToggle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxToggle.cpp; sourceTree = "<group>"; };
+		459B1DDD1EF96296003A3E3F /* ofxToggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxToggle.h; sourceTree = "<group>"; };
+		459B1DE91EF9794F003A3E3F /* DomeView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DomeView.cpp; sourceTree = "<group>"; };
+		459B1DEA1EF9794F003A3E3F /* DomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomeView.h; sourceTree = "<group>"; };
+		459B1DEC1EF97B74003A3E3F /* Renderable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Renderable.cpp; sourceTree = "<group>"; };
+		459B1DED1EF97B74003A3E3F /* Renderable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Renderable.h; sourceTree = "<group>"; };
 		56850FE6F91EC6754F6C8B33 /* HTMLparser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = HTMLparser.h; path = ../../../addons/ofxSvg/libs/libxml2/include/libxml/HTMLparser.h; sourceTree = SOURCE_ROOT; };
 		5AC81D37E977C3921A197DFA /* xmlmodule.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = xmlmodule.h; path = ../../../addons/ofxSvg/libs/libxml2/include/libxml/xmlmodule.h; sourceTree = SOURCE_ROOT; };
 		66B0240E8FAA94E3CBDD22E6 /* relaxng.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = relaxng.h; path = ../../../addons/ofxSvg/libs/libxml2/include/libxml/relaxng.h; sourceTree = SOURCE_ROOT; };
@@ -110,7 +147,7 @@
 		D59A8A228B2542FEDE81C675 /* dict.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dict.h; path = ../../../addons/ofxSvg/libs/libxml2/include/libxml/dict.h; sourceTree = SOURCE_ROOT; };
 		DD8A180EA5BA8431BE11CB13 /* xmlexports.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = xmlexports.h; path = ../../../addons/ofxSvg/libs/libxml2/include/libxml/xmlexports.h; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
-		E4B69B5B0A3A1756003C02F2 /* test_polarDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test_polarDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* test_polarDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = test_polarDebug.app; path = RfRenderer_01Debug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
@@ -251,9 +288,13 @@
 		454408C71EF83B3000BCF9EE /* common */ = {
 			isa = PBXGroup;
 			children = (
+				459B1DED1EF97B74003A3E3F /* Renderable.h */,
+				459B1DC41EF95FE8003A3E3F /* TexView.h */,
+				459B1DC31EF95FE8003A3E3F /* TexView.cpp */,
+				459B1DEA1EF9794F003A3E3F /* DomeView.h */,
+				459B1DE91EF9794F003A3E3F /* DomeView.cpp */,
+				459B1DEC1EF97B74003A3E3F /* Renderable.cpp */,
 				454408C81EF83B3000BCF9EE /* AnimationParts.h */,
-				454408C91EF83B3000BCF9EE /* BigNumber.cpp */,
-				454408CA1EF83B3000BCF9EE /* BigNumber.h */,
 				454408CB1EF83B3000BCF9EE /* EasingPrm.h */,
 				454408CC1EF83B3000BCF9EE /* FontManager.cpp */,
 				454408CD1EF83B3000BCF9EE /* FontManager.h */,
@@ -268,6 +309,43 @@
 			);
 			name = common;
 			path = ../../common;
+			sourceTree = "<group>";
+		};
+		459B1DC71EF96296003A3E3F /* ofxGui */ = {
+			isa = PBXGroup;
+			children = (
+				459B1DC81EF96296003A3E3F /* src */,
+			);
+			name = ofxGui;
+			path = ../../../addons/ofxGui;
+			sourceTree = "<group>";
+		};
+		459B1DC81EF96296003A3E3F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				459B1DC91EF96296003A3E3F /* ofxBaseGui.cpp */,
+				459B1DCA1EF96296003A3E3F /* ofxBaseGui.h */,
+				459B1DCB1EF96296003A3E3F /* ofxButton.cpp */,
+				459B1DCC1EF96296003A3E3F /* ofxButton.h */,
+				459B1DCD1EF96296003A3E3F /* ofxColorPicker.cpp */,
+				459B1DCE1EF96296003A3E3F /* ofxColorPicker.h */,
+				459B1DCF1EF96296003A3E3F /* ofxGui.h */,
+				459B1DD01EF96296003A3E3F /* ofxGuiGroup.cpp */,
+				459B1DD11EF96296003A3E3F /* ofxGuiGroup.h */,
+				459B1DD21EF96296003A3E3F /* ofxInputField.cpp */,
+				459B1DD31EF96296003A3E3F /* ofxInputField.h */,
+				459B1DD41EF96296003A3E3F /* ofxLabel.cpp */,
+				459B1DD51EF96296003A3E3F /* ofxLabel.h */,
+				459B1DD61EF96296003A3E3F /* ofxPanel.cpp */,
+				459B1DD71EF96296003A3E3F /* ofxPanel.h */,
+				459B1DD81EF96296003A3E3F /* ofxSlider.cpp */,
+				459B1DD91EF96296003A3E3F /* ofxSlider.h */,
+				459B1DDA1EF96296003A3E3F /* ofxSliderGroup.cpp */,
+				459B1DDB1EF96296003A3E3F /* ofxSliderGroup.h */,
+				459B1DDC1EF96296003A3E3F /* ofxToggle.cpp */,
+				459B1DDD1EF96296003A3E3F /* ofxToggle.h */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		56C3EF4F8B6741F408B86361 /* svgtiny */ = {
@@ -296,6 +374,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				459B1DC71EF96296003A3E3F /* ofxGui */,
 				0D0595A62FF5ED8D37029107 /* ofxEasing */,
 				0EE72FB70C816E7EDB6AF762 /* ofxTextureRecorder */,
 				F5F1F1EF8441E64FD46F07C8 /* ofxSvg */,
@@ -389,9 +468,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4B69B5A0A3A1756003C02F2 /* test_polar */ = {
+		E4B69B5A0A3A1756003C02F2 /* RfRenderer_01 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "test_polar" */;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "RfRenderer_01" */;
 			buildPhases = (
 				E4B69B580A3A1756003C02F2 /* Sources */,
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
@@ -404,7 +483,7 @@
 			dependencies = (
 				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
 			);
-			name = test_polar;
+			name = RfRenderer_01;
 			productName = myOFApp;
 			productReference = E4B69B5B0A3A1756003C02F2 /* test_polarDebug.app */;
 			productType = "com.apple.product-type.application";
@@ -417,7 +496,7 @@
 			attributes = {
 				LastUpgradeCheck = 0600;
 			};
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "test_polar" */;
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "RfRenderer_01" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -438,7 +517,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4B69B5A0A3A1756003C02F2 /* test_polar */,
+				E4B69B5A0A3A1756003C02F2 /* RfRenderer_01 */,
 			);
 		};
 /* End PBXProject section */
@@ -487,12 +566,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				454408D61EF83B3000BCF9EE /* BigNumber.cpp in Sources */,
+				459B1DE61EF96296003A3E3F /* ofxSliderGroup.cpp in Sources */,
+				459B1DC51EF95FE8003A3E3F /* TexView.cpp in Sources */,
+				459B1DE31EF96296003A3E3F /* ofxLabel.cpp in Sources */,
+				459B1DE01EF96296003A3E3F /* ofxColorPicker.cpp in Sources */,
 				454408D81EF83B3000BCF9EE /* Graph.cpp in Sources */,
+				459B1DE41EF96296003A3E3F /* ofxPanel.cpp in Sources */,
 				454408D71EF83B3000BCF9EE /* FontManager.cpp in Sources */,
+				459B1DEE1EF97B74003A3E3F /* Renderable.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				459B1DE51EF96296003A3E3F /* ofxSlider.cpp in Sources */,
+				459B1DEB1EF9794F003A3E3F /* DomeView.cpp in Sources */,
+				459B1DDE1EF96296003A3E3F /* ofxBaseGui.cpp in Sources */,
 				630D46DEBC2B6DC21603F304 /* ofxTextureRecorder.cpp in Sources */,
+				459B1DE21EF96296003A3E3F /* ofxInputField.cpp in Sources */,
+				459B1DE11EF96296003A3E3F /* ofxGuiGroup.cpp in Sources */,
+				459B1DE71EF96296003A3E3F /* ofxToggle.cpp in Sources */,
 				B88A57B4B0BA6191EF3571E9 /* ofxSvg.cpp in Sources */,
+				459B1DDF1EF96296003A3E3F /* ofxButton.cpp in Sources */,
 				454408D91EF83B3000BCF9EE /* Util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -828,7 +919,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "test_polar" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "RfRenderer_01" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
@@ -838,7 +929,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "test_polar" */ = {
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "RfRenderer_01" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B600A3A1757003C02F2 /* Debug */,
