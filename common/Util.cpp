@@ -88,7 +88,7 @@ void Util::eraseLineBreak(string &text){
 }
 
 filesystem::path Util::getResFolder(){
-    return filesystem::path("../../../res/");
+    return filesystem::path("../../../../../../res/");
 }
 
 string Util::replaceAll(std::string str, const std::string& from, const std::string& to) {

@@ -59,7 +59,7 @@ namespace mikromedas{
         }
         void drawGui(){
             frameRate.set(ofGetFrameRate());
-            texCopyTime.set( recorder.getAvgTimeTextureCopy() );
+            texCopyTime.set( recorder.getAvgTimeTextureCopy());
             gpuDownTime.set( recorder.getAvgTimeGpuDownload());
             encodeTime.set( recorder.getAvgTimeEncode());
             fileSaveTime.set( recorder.getAvgTimeSave());
@@ -79,12 +79,14 @@ namespace mikromedas{
             render.set(false);
             recorder.stop();
         }
+    protected:
+        ofParameterGroup   parameters;
+        ofxPanel gui;
+        ofFbo fbo;
+        ofxTextureRecorder recorder;
         
     private:
 
-        ofxTextureRecorder recorder;
-        ofFbo fbo;
-        ofParameterGroup   parameters;
         ofParameter<bool>  render;
         ofParameter<float> frameRate;
         ofParameter<float> texCopyTime;
@@ -92,7 +94,6 @@ namespace mikromedas{
         ofParameter<float> encodeTime;
         ofParameter<float> fileSaveTime;
         
-        ofxPanel gui;
 
     };
     

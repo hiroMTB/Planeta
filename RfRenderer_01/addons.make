@@ -1,3 +1,5 @@
 ofxEasing
 ofxTextureRecorder
 ofxSvg
+ofxAssimpModelLoader
+ofxGui

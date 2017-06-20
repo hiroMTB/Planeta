@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Volumes/Mikromedas/code/openFrameworks/apps/Planeta/RfRenderer_01/RfRenderer_01.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

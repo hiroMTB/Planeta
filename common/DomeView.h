@@ -20,5 +20,8 @@ namespace mikromedas{
         ofEasyCam cam;
         ofxAssimpModelLoader model;
 
+        ofParameterGroup   parameters2;
+        ofxPanel gui2;
+        ofParameter<bool> drawModel;
     };
 }
