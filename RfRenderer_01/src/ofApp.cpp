@@ -28,6 +28,8 @@ void ofApp::exit(){
 
 int main(){
     
+    ofSetLogLevel(OF_LOG_VERBOSE);
+
     int size = 500;
     
     // main process
@@ -54,7 +56,7 @@ int main(){
     
     // 3D Dome View, Renderable
     settings.width = 1920-size;
-    settings.height = 1080-60;
+    settings.height = settings.width/(1920/1080.0);
     settings.setPosition(ofVec2f(size,0));
     settings.resizable = true;
     settings.shareContextWith = mainWindow;

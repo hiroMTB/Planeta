@@ -27,38 +27,40 @@ namespace mikromedas{
             settings.maxMemoryUsage = 9000000000;
             settings.folderPath = path;            
             recorder.setup(settings);
-            
-            parameters.setName("render param");
-            parameters.add(render.set("render",false));
-            parameters.add(frameRate.set("frameRate", 0));
-            parameters.add(texCopyTime.set("texCopyTime", 0));
-            parameters.add(gpuDownTime.set("gpuDownTime", 0));
-            parameters.add(encodeTime.set("encodeTime", 0));
-            parameters.add(fileSaveTime.set("fileSaveTime", 0));
-
-            gui.setup(parameters);
+        }
+        
+        void setupRenderGui(){
+            renderPrms.setName("Render Parameters");
+            renderPrms.add(render.set("render",false));
+            renderPrms.add(frameRate.set("frameRate", 0));
+            renderPrms.add(texCopyTime.set("texCopyTime", 0));
+            renderPrms.add(gpuDownTime.set("gpuDownTime", 0));
+            renderPrms.add(encodeTime.set("encodeTime", 0));
+            renderPrms.add(fileSaveTime.set("fileSaveTime", 0));
+            gui.add(renderPrms);
         }
         
         virtual ~Renderable(){
             recorder.stop();
         }
         
-        void begin(){
+        void beginRenderFbo(){
             fbo.begin();
         }
         
-        void end(){
+        void endRenderFbo(){
             fbo.end();
         }
         
-        void drawFbo(int w, int h){
+        void drawRenderFbo(int w, int h){
             ofBackground(20);
             ofRectangle r(0, 0, fbo.getWidth(), fbo.getHeight());
             r.scaleTo( ofRectangle(0, 0, w, h) );
             fbo.draw(r);
         }
+        
         void drawGui(){
-            frameRate.set(ofGetFrameRate());
+            frameRate.set( (int)ofGetFrameRate());
             texCopyTime.set( recorder.getAvgTimeTextureCopy());
             gpuDownTime.set( recorder.getAvgTimeGpuDownload());
             encodeTime.set( recorder.getAvgTimeEncode());
@@ -66,7 +68,7 @@ namespace mikromedas{
             gui.draw();
         }
         
-        void save(int frame){
+        void saveRenderFbo(int frame){
             if(render.get())
                 recorder.save(fbo.getTexture(), frame);
         }
@@ -80,21 +82,17 @@ namespace mikromedas{
             recorder.stop();
         }
     protected:
-        ofParameterGroup   parameters;
+        ofParameterGroup   renderPrms;
         ofxPanel gui;
         ofFbo fbo;
         ofxTextureRecorder recorder;
         
     private:
-
         ofParameter<bool>  render;
         ofParameter<float> frameRate;
         ofParameter<float> texCopyTime;
         ofParameter<float> gpuDownTime;
         ofParameter<float> encodeTime;
         ofParameter<float> fileSaveTime;
-        
-
     };
-    
 }

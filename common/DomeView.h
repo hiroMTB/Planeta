@@ -17,11 +17,15 @@ namespace mikromedas{
         void draw();
         void exit();
         
+        void updateCameraSettings(float & fake);
+        
         ofEasyCam cam;
         ofxAssimpModelLoader model;
 
-        ofParameterGroup   parameters2;
-        ofxPanel gui2;
+        ofParameterGroup  domePrms;
         ofParameter<bool> drawModel;
+        ofParameter<float> nearClip;
+        ofParameter<float> farClip;
+        ofParameter<float> fov;
     };
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DomeView>
+	<Render_Parameters>
+		<render>0</render>
+		<frameRate>25</frameRate>
+		<texCopyTime>0</texCopyTime>
+		<gpuDownTime>0</gpuDownTime>
+		<encodeTime>0</encodeTime>
+		<fileSaveTime>0</fileSaveTime>
+	</Render_Parameters>
+	<DomeView_Prameters>
+		<drawModel>1</drawModel>
+		<nearClip>12.8572</nearClip>
+		<farClip>500</farClip>
+		<fov>60</fov>
+	</DomeView_Prameters>
+</DomeView>

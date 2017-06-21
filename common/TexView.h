@@ -13,6 +13,11 @@ namespace mikromedas{
         void setup();
         void update();
         void draw();
+        void drawGuide();
         void exit();
+        
+        ofParameterGroup  texPrms;
+        ofParameter<bool> bDrawGuide;
+
     };
 }

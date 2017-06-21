@@ -347,6 +347,8 @@
 			isa = PBXGroup;
 			children = (
 				452D59151EF9C97E0056F3E7 /* AnimationParts.h */,
+				452D591E1EF9C97E0056F3E7 /* Renderable.h */,
+				452D591D1EF9C97E0056F3E7 /* Renderable.cpp */,
 				452D59161EF9C97E0056F3E7 /* DomeView.cpp */,
 				452D59171EF9C97E0056F3E7 /* DomeView.h */,
 				452D59181EF9C97E0056F3E7 /* EasingPrm.h */,
@@ -354,8 +356,6 @@
 				452D591A1EF9C97E0056F3E7 /* FontManager.h */,
 				452D591B1EF9C97E0056F3E7 /* Graph.cpp */,
 				452D591C1EF9C97E0056F3E7 /* Graph.h */,
-				452D591D1EF9C97E0056F3E7 /* Renderable.cpp */,
-				452D591E1EF9C97E0056F3E7 /* Renderable.h */,
 				452D591F1EF9C97E0056F3E7 /* RfExporterBin.h */,
 				452D59201EF9C97E0056F3E7 /* RfImporterBin.h */,
 				452D59211EF9C97E0056F3E7 /* RfImporterRpc.h */,

@@ -22,22 +22,48 @@ void DomeView::setup(){
     model.setRotation(0, 180, 1, 0, 0);
     model.setPosition(0, 2, 0);
     model.setScale(1, 1, 1);
+ 
+    gui.setup("DomeView", "DomeViewSettings.xml");
+    setupRenderGui();
+    domePrms.setName("DomeView Prameters");
+    
+    domePrms.add(drawModel.set("drawModel", true));
+    domePrms.add(nearClip.set("nearClip", 10, 0.0001, 20));
+    domePrms.add(farClip.set("farClip", 500, 100, 1000));
+    domePrms.add(fov.set("fov", 60, 0, 180));
+    
+    gui.add(domePrms);
+    farClip.addListener(this, &DomeView::updateCameraSettings);
+    nearClip.addListener(this, &DomeView::updateCameraSettings);
+    fov.addListener(this, &DomeView::updateCameraSettings);
 
-    parameters2.setName("dome param");
-    parameters2.add(drawModel.set("drawModel", true));
-    gui2.setup(parameters2, "domeView", 200, 10);
+    
+    gui.loadFromFile("DomeViewSettings.xml");
 
+    float fake;
+    updateCameraSettings(fake);
 }
 
 void DomeView::update(){
-    save(ofApp::get()->frame);
+    saveRenderFbo(ofApp::get()->frame);
+}
+
+void DomeView::updateCameraSettings(float & fake){
+    cam.setNearClip(nearClip.get());
+    cam.setFarClip(farClip.get());
+    cam.setFov(fov.get());
+    //cam.setPosition(<#float px#>, <#float py#>, <#float pz#>)
+    cam.lookAt(cam.getTarget());
+                   
 }
 
 void DomeView::draw(){
-    begin();
+    beginRenderFbo();
+    
     ofEnableDepthTest();
     cam.begin();
-   ofPushMatrix();
+    ofPushMatrix();
+    //ofBackgroundGradient(ofColor(0), ofColor(255), OF_GRADIENT_LINEAR);
     ofBackground(0);
     
     ofNoFill();
@@ -46,22 +72,21 @@ void DomeView::draw(){
     if(drawModel.get()) model.drawWireframe();
 
     ofRotateXDeg(90);
-    ofDrawCircle(0, 0, 24);
+    ofDrawCircle(0, 0, 23);
     ofTranslate(0,0,-2);
-    ofDrawCircle(0, 0, 24);
+    ofDrawCircle(0, 0, 23);
 
     ofPopMatrix();
     
   	cam.end();
     
-    end();
+    endRenderFbo();
     
-    drawFbo(ofGetWidth(), ofGetHeight());
+    drawRenderFbo(ofGetWidth(), ofGetHeight());
 
     ofDisableDepthTest();
     drawGui();
     
-    gui2.draw();
 }
 
 void DomeView::exit(){

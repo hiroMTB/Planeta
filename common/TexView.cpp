@@ -14,15 +14,22 @@ void TexView::setup(){
     ofSetBackgroundColor(0);
     ofSetFrameRate(fps);
     ofSetCircleResolution(160);
+    
+    gui.setup("Tex View", "TexViewSettings.xml");
+    setupRenderGui();
+    texPrms.setName("TexView Parameters");
+    texPrms.add(bDrawGuide.set("drawGuide", true));
+    gui.add(texPrms);
+        gui.loadFromFile("DomeViewSettings.xml");
 }
 
 void TexView::update(){
-    save(ofApp::get()->frame);
+    saveRenderFbo(ofApp::get()->frame);
 }
 
 void TexView::draw(){
     
-    begin();
+    beginRenderFbo();
     ofPushMatrix();
     ofBackground(0);
     ofTranslate(centerX, centerY);
@@ -31,32 +38,35 @@ void TexView::draw(){
     ofFill();
     ofDrawCircle(0, 0, renderW/2);
     
-    {
-        ofSetColor(0,0,255);
-        ofSetLineWidth(1);
-        ofNoFill();
-        float rad = renderW/2;
-        for(int i=0; i<10; i++){
-            float r = rad/10.0f * i;
-            ofDrawCircle(0, 0, r);
-        }
-        
-        for(int i=0; i<18; i++){
-            
-            ofPushMatrix();
-            ofRotateDeg(i*10);
-            ofDrawLine(-rad, 0, rad, 0);
-            ofPopMatrix();
-        }
-    }
+    if(bDrawGuide.get()) drawGuide();
     
     ofPopMatrix();
     
-    end();
+    endRenderFbo();
     
-    drawFbo(ofGetWidth(), ofGetHeight());
+    drawRenderFbo(ofGetWidth(), ofGetHeight());
 
     drawGui();
+}
+
+void TexView::drawGuide(){
+    
+    ofSetColor(0,0,255);
+    ofSetLineWidth(1);
+    ofNoFill();
+    float rad = renderW/2;
+    for(int i=0; i<10; i++){
+        float r = rad/10.0f * i;
+        ofDrawCircle(0, 0, r);
+    }
+    
+    for(int i=0; i<18; i++){
+        
+        ofPushMatrix();
+        ofRotateDeg(i*10);
+        ofDrawLine(-rad, 0, rad, 0);
+        ofPopMatrix();
+    }   
 }
 
 void TexView::exit(){
