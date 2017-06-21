@@ -10,8 +10,13 @@
 	</Render_Parameters>
 	<DomeView_Prameters>
 		<drawModel>1</drawModel>
-		<nearClip>12.8572</nearClip>
+		<nearClip>9.08169</nearClip>
 		<farClip>500</farClip>
-		<fov>60</fov>
+		<fov>78.0612</fov>
+		<distance>19.8981</distance>
+		<lensOffset>0, 5.7476</lensOffset>
+		<pan>82.6531</pan>
+		<tilt>-79.898</tilt>
+		<roll>25.7143</roll>
 	</DomeView_Prameters>
 </DomeView>
