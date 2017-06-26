@@ -9,11 +9,7 @@ using namespace ScreenDef;
 DomeView::DomeView(int w, int h, string path) : Renderable(w, h, path){
 }
 
-void DomeView::setup(){
-    ofSetBackgroundColor(0);
-    ofSetFrameRate(fps);
-    ofSetCircleResolution(160);
-    
+void DomeView::setupModel(){
     string fileName = "dome.obj";
     filesystem::path path = Util::getResFolder()/"3dModel"/fileName;
     model.setScaleNormalization(false);
@@ -21,9 +17,9 @@ void DomeView::setup(){
     model.setRotation(0, 180, 1, 0, 0);
     model.setPosition(0, 2, 0);
     model.setScale(1, 1, 1);
- 
-    gui.setup("DomeView", "DomeViewSettings.xml");
-    setupRenderGui();
+}
+
+void DomeView::setupCameraGui(){
     domePrms.setName("DomeView Prameters");
     
     domePrms.add(bDrawWireFrame.set("drawWireFrame", true));
@@ -55,14 +51,6 @@ void DomeView::setup(){
     gui.loadFromFile("DomeViewSettings.xml");
 
     updateCameraSettings();
-    
-    
-    img.load( Util::getResFolder()/"img"/"test.png");
-}
-
-void DomeView::update(){
-    distance.set(cam.getDistance());
-    saveRenderFbo(ofApp::get()->frame);
 }
 
 void DomeView::floatCb(float & fake){
@@ -98,58 +86,9 @@ void DomeView::updateCameraSettings(){
     prevPan = pan.get();
     prevTilt = tilt.get();
     prevRoll = roll.get();
-                   
 }
 
-void DomeView::draw(){
-    beginRenderFbo();
-    
-    ofEnableDepthTest();
-    cam.begin();
-    ofPushMatrix();
-
-    ofBackground(0);
-    
-    
-    if(bDrawFaces.get()){
-        ofNoFill();
-        ofSetColor(255);
-        bindMyTexture();
-        model.draw(OF_MESH_FILL);
-        unbindMyTexture();
-    }
-    
-    if(bDrawWireFrame.get()){
-        ofNoFill();
-        ofSetColor(255);
-        model.drawWireframe();
-    }
-
-    ofRotateXDeg(90);
-    ofDrawCircle(0, 0, 23);
-    //ofTranslate(0,0,-2);
-    //ofDrawCircle(0, 0, 23);
-
-    ofPopMatrix();
-    
-  	cam.end();
-    
-    endRenderFbo();
-    
-    drawRenderFbo(ofGetWidth(), ofGetHeight());
-
-    ofDisableDepthTest();
-    drawGui();
-    
-}
-
-void DomeView::exit(){
-
-}
-
-
-void DomeView::bindMyTexture() {
-    ofTexture &tex = img.getTexture();
+void DomeView::bindMyTexture(const ofTexture & tex) {
     tex.bind();
     
     glMatrixMode(GL_TEXTURE);
@@ -166,10 +105,33 @@ void DomeView::bindMyTexture() {
     glMatrixMode(GL_MODELVIEW);
 }
 
-void DomeView::unbindMyTexture() {
-    img.getTexture().unbind();
+void DomeView::unbindMyTexture(const ofTexture & tex) {
+    tex.unbind();
     
     glMatrixMode(GL_TEXTURE);
     glPopMatrix();
     glMatrixMode(GL_MODELVIEW);
+}
+
+void DomeView::drawModelWireframe(){
+    if(bDrawWireFrame.get()){
+        ofNoFill();
+        ofSetColor(255);
+        model.drawWireframe();
+      
+        ofPushMatrix();
+        ofRotateXDeg(90);
+        ofDrawCircle(0, 0, 23);
+        ofPopMatrix();
+    }
+}
+
+void DomeView::drawModelTextured(const ofTexture & tex){
+    if(bDrawFaces.get()){
+        ofNoFill();
+        ofSetColor(255);
+        bindMyTexture(tex);
+        model.draw(OF_MESH_FILL);
+        unbindMyTexture(tex);
+    }
 }

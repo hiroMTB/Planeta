@@ -61,10 +61,10 @@ int main(){
     settings.resizable = true;
     settings.shareContextWith = mainWindow;
 
-    shared_ptr<ofAppBaseWindow> domeWindow = ofCreateWindow(settings);
-    shared_ptr<DomeView> domeApp(new DomeView(settings.width, settings.height, "render/dome"));
-    ofApp::get()->domeView = domeApp;
-    ofRunApp(domeWindow, domeApp);
+    shared_ptr<ofAppBaseWindow> rfWindow = ofCreateWindow(settings);
+    shared_ptr<RfView> rfApp(new RfView(settings.width, settings.height, "render/dome"));
+    ofApp::get()->rfView = rfApp;
+    ofRunApp(rfWindow, rfApp);
 
     ofRunMainLoop();
 

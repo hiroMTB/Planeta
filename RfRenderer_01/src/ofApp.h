@@ -4,7 +4,7 @@
 #include "EasingPrm.h"
 #include "ofxGui.h"
 #include "TexView.h"
-#include "DomeView.h"
+#include "RfView.h"
 
 using namespace mikromedas;
 
@@ -28,6 +28,6 @@ public:
     vector<EasingPrm> anim;
     
     shared_ptr<TexView> texView;
-    shared_ptr<DomeView> domeView;
+    shared_ptr<RfView> rfView;
 };
 

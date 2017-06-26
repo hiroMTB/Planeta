@@ -11,17 +11,23 @@ namespace mikromedas{
         
     public:
         DomeView(int w, int h, string path);
-
-        void setup();
-        void update();
-        void draw();
-        void exit();
+        virtual ~DomeView(){cout << " - Destruct DomeView"; };
+        virtual void setup(){};
+        virtual void update(){};
+        virtual void draw(){};
+        virtual void exit(){};
+        
+        void setupModel();
+        void setupCameraGui();
         
         void resetCamera();
         void updateCameraSettings();
         void floatCb(float & fake);
         void vec2Cb(glm::vec2 & fake);
         void vec3Cb(glm::vec3 & fake);
+
+        void drawModelWireframe();
+        void drawModelTextured(const ofTexture & tex);
         
         ofEasyCam cam;
         ofxAssimpModelLoader model;
@@ -44,9 +50,7 @@ namespace mikromedas{
         float prevTilt = 0;
         float prevRoll = 0;
         
-        ofImage img;
-        
-        void bindMyTexture();
-        void unbindMyTexture();
+        void bindMyTexture(const ofTexture & tex);
+        void unbindMyTexture(const ofTexture & tex);
     };
 }

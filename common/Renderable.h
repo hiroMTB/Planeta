@@ -41,6 +41,7 @@ namespace mikromedas{
         }
         
         virtual ~Renderable(){
+            cout << " - Destruct Renderable" << endl;
             recorder.stop();
         }
         
@@ -65,6 +66,7 @@ namespace mikromedas{
             gpuDownTime.set( recorder.getAvgTimeGpuDownload());
             encodeTime.set( recorder.getAvgTimeEncode());
             fileSaveTime.set( recorder.getAvgTimeSave());
+            ofDisableDepthTest();
             gui.draw();
         }
         
