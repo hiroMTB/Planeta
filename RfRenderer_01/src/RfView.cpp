@@ -25,6 +25,8 @@ void RfView::setup(){
     rfPrms.add(numParticles.set("num particles", 0, 0, 1000000));
     gui.add(rfPrms);
     
+    img.load(Util::getResFolder()/"img"/"test.png");
+    
 }
 
 void RfView::update(){
@@ -69,14 +71,17 @@ void RfView::draw(){
     
     ofBackground(0);
     
-    drawModelWireframe();
+    //drawModelWireframe();
+    ofSetColor(255,100);
+    drawWireDome(6, 12);
+    drawTexDome(img.getTexture());
     
+    // draw rf
     ofPushMatrix();
     ofSetColor(255);
     ofTranslate(0, 2, 0);
     mesh.drawVertices();
     ofPopMatrix();
-    
     
     cam.end();
     endRenderFbo();

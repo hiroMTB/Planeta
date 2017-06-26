@@ -23,4 +23,6 @@ public:
     
     static double myMap(double value, double inputMin, double inputMax, double outputMin, double outputMax, bool clamp=false);
 
+    static void drawOpenArc();
+
 };

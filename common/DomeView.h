@@ -26,12 +26,13 @@ namespace mikromedas{
         void vec2Cb(glm::vec2 & fake);
         void vec3Cb(glm::vec3 & fake);
 
-        void drawModelWireframe();
-        void drawModelTextured(const ofTexture & tex);
+        void drawTexDome(const ofTexture & tex);
+        void drawWireDome(int res1, int res2);
         
         ofEasyCam cam;
-        ofxAssimpModelLoader model;
-
+        ofxAssimpModelLoader wire_dome;
+        ofxAssimpModelLoader tex_dome;
+        
         ofParameterGroup  domePrms;
         ofParameter<bool> bDrawWireFrame;
         ofParameter<bool> bDrawFaces;

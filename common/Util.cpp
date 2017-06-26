@@ -116,3 +116,19 @@ double Util::myMap(double value, double inputMin, double inputMax, double output
     return outVal;
 }
 
+void Util::drawOpenArc(){
+    static ofVboMesh arc;
+
+    arc.setMode(OF_PRIMITIVE_LINE_STRIP);
+    if(arc.getNumVertices() == 0){
+        int arcRes = 18;
+        for(int i=0; i<arcRes+1; i++){
+            float angle = i * 180.0/arcRes;
+            float x = cos(ofDegToRad(angle));
+            float y = sin(ofDegToRad(angle));
+            arc.addVertex(glm::vec3(x, y, 0));
+        }
+    }
+    
+    arc.draw(OF_MESH_WIREFRAME);
+}
