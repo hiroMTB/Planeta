@@ -6,19 +6,12 @@
 
 namespace mikromedas{
     
-    class Renderable{
+    class Renderer{
         
     public:
-        Renderable()=delete;
-        Renderable(Renderable& x)=default;
-        template<class T> Renderable(T& x)=delete;
-        Renderable & operator=(Renderable const &)=default;
-        template<class T> Renderable & operator=(T const &)=delete;
         
-        Renderable( int w, int h, string path){
-            
-            ofSetVerticalSync(false);
-            ofBackground(0);
+        Renderer(){}
+        void setup(int w, int h, string path){
             
             fbo.allocate(w, h, GL_RGB);
             ofxTextureRecorder::Settings settings(fbo.getTexture());
@@ -29,7 +22,7 @@ namespace mikromedas{
             recorder.setup(settings);
         }
         
-        void setupRenderGui(){
+        void setupRenderGui(ofxPanel & gui){
             renderPrms.setName("Render Parameters");
             renderPrms.add(render.set("render",false));
             renderPrms.add(frameRate.set("frameRate", 0));
@@ -38,11 +31,6 @@ namespace mikromedas{
             renderPrms.add(encodeTime.set("encodeTime", 0));
             renderPrms.add(fileSaveTime.set("fileSaveTime", 0));
             gui.add(renderPrms);
-        }
-        
-        virtual ~Renderable(){
-            cout << " - Destruct Renderable" << endl;
-            recorder.stop();
         }
         
         void beginRenderFbo(){
@@ -60,14 +48,12 @@ namespace mikromedas{
             fbo.draw(r);
         }
         
-        void drawGui(){
+        void update(){
             frameRate.set( (int)ofGetFrameRate());
             texCopyTime.set( recorder.getAvgTimeTextureCopy());
             gpuDownTime.set( recorder.getAvgTimeGpuDownload());
             encodeTime.set( recorder.getAvgTimeEncode());
             fileSaveTime.set( recorder.getAvgTimeSave());
-            ofDisableDepthTest();
-            gui.draw();
         }
         
         void saveRenderFbo(int frame){
@@ -83,9 +69,8 @@ namespace mikromedas{
             render.set(false);
             recorder.stop();
         }
-    protected:
+
         ofParameterGroup   renderPrms;
-        ofxPanel gui;
         ofFbo fbo;
         ofxTextureRecorder recorder;
         

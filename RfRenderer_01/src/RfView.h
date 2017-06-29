@@ -2,6 +2,7 @@
 
 #include "DomeView.h"
 #include "RfImporterBin.h"
+#include "Renderer.h"
 
 using namespace mikromedas;
 
@@ -24,9 +25,10 @@ public:
     
     ofImage img;
 
+    ofxPanel gui;
+    Renderer renderer;
+    
     ofParameterGroup rfPrms;
-    ofParameter<bool> bStart;
-    ofParameter<int> simFrame;
     ofParameter<int> numParticles;
 };
 

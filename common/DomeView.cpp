@@ -6,33 +6,17 @@
 using namespace mikromedas;
 using namespace ScreenDef;
 
-DomeView::DomeView(int w, int h, string path) : Renderable(w, h, path){
-}
-
 void DomeView::setupModel(){
-    
-    {
-        string fileName = "tex-dome.obj";
-        filesystem::path path = Util::getResFolder()/"3dModel"/fileName;
-        tex_dome.setScaleNormalization(false);
-        tex_dome.loadModel(path.string());
-        tex_dome.setRotation(0, 180, 1, 0, 0);
-        tex_dome.setPosition(0, 2, 0);
-        tex_dome.setScale(23, 23, 23);
-    }
-    
-    //    {
-    //        string fileName = "wire-domw.obj";
-    //        filesystem::path path = Util::getResFolder()/"3dModel"/fileName;
-    //        wire_dome.setScaleNormalization(false);
-    //        wire_dome.loadModel(path.string());
-    //        wire_dome.setRotation(0, 180, 1, 0, 0);
-    //        wire_dome.setPosition(0, 2, 0);
-    //        wire_dome.setScale(1, 1, 1);
-    //    }
+    string fileName = "tex-dome.obj";
+    filesystem::path path = Util::getResFolder()/"3dModel"/fileName;
+    tex_dome.setScaleNormalization(false);
+    tex_dome.loadModel(path.string());
+    tex_dome.setRotation(0, 180, 1, 0, 0);
+    tex_dome.setPosition(0, 2, 0);
+    tex_dome.setScale(23, 23, 23);
 }
 
-void DomeView::setupCameraGui(){
+void DomeView::setupCameraGui(ofxPanel & gui){
     domePrms.setName("DomeView Prameters");
     
     domePrms.add(bDrawWireFrame.set("drawWireFrame", true));
@@ -61,7 +45,6 @@ void DomeView::setupCameraGui(){
     
     lensOffset.addListener(this, &DomeView::vec2Cb);
     resetCameraBtn.addListener(this, &DomeView::resetCamera);
-    gui.loadFromFile("DomeViewSettings.xml");
     
     updateCameraSettings();
 }
@@ -80,7 +63,7 @@ void DomeView::vec3Cb(glm::vec3 & fake){
 
 void DomeView::resetCamera(){
     cam.reset();
-    gui.loadFromFile("DomeViewSettings.xml");
+    //gui.loadFromFile("DomeViewSettings.xml");
     updateCameraSettings();
 }
 

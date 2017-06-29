@@ -6,47 +6,10 @@
 using namespace mikromedas;
 using namespace ScreenDef;
 
-TexView::TexView(int w, int h, string path) : Renderable(w, h, path){
-    
-}
-
-void TexView::setup(){
-    ofSetBackgroundColor(0);
-    ofSetFrameRate(fps);
-    ofSetCircleResolution(160);
-    
-    gui.setup("Tex View", "TexViewSettings.xml");
-    setupRenderGui();
+void TexView::setupGui(ofxPanel & gui){
     texPrms.setName("TexView Parameters");
     texPrms.add(bDrawGuide.set("drawGuide", true));
     gui.add(texPrms);
-        gui.loadFromFile("DomeViewSettings.xml");
-}
-
-void TexView::update(){
-    saveRenderFbo(ofApp::get()->frame);
-}
-
-void TexView::draw(){
-    
-    beginRenderFbo();
-    ofPushMatrix();
-    ofBackground(0);
-    ofTranslate(centerX, centerY);
-    
-    ofSetColor(255);
-    ofFill();
-    ofDrawCircle(0, 0, renderW/2);
-    
-    if(bDrawGuide.get()) drawGuide();
-    
-    ofPopMatrix();
-    
-    endRenderFbo();
-    
-    drawRenderFbo(ofGetWidth(), ofGetHeight());
-
-    drawGui();
 }
 
 void TexView::drawGuide(){
@@ -67,8 +30,4 @@ void TexView::drawGuide(){
         ofDrawLine(-rad, 0, rad, 0);
         ofPopMatrix();
     }   
-}
-
-void TexView::exit(){
-    ofExit();
 }

@@ -7,7 +7,8 @@
 using namespace mikromedas;
 using namespace ScreenDef;
 
-RfView::RfView(int w, int h, string path) : DomeView(w,h,path){
+RfView::RfView(int w, int h, string path){
+    renderer.setup(w, h, path);
 }
 
 void RfView::setup(){
@@ -17,29 +18,29 @@ void RfView::setup(){
     
     setupModel();
     gui.setup("DomeView", "DomeViewSettings.xml");
-    setupRenderGui();
-    setupCameraGui();
+    renderer.setupRenderGui(gui);
+    setupCameraGui(gui);
     
-    rfPrms.add(bStart.set("start", true));
-    rfPrms.add(simFrame.set("frame", 0, 0, 2500));
     rfPrms.add(numParticles.set("num particles", 0, 0, 1000000));
     gui.add(rfPrms);
+    gui.loadFromFile("DomeViewSettings.xml");
     
     img.load(Util::getResFolder()/"img"/"test.png");
-    
 }
 
 void RfView::update(){
+    bool bStart = ofApp::get()->bStart.get();
+    int frame = ofApp::get()->frame.get();
     
     distance.set(cam.getDistance());
-    saveRenderFbo(ofApp::get()->frame);
-    
+    renderer.update();
+
     if(bStart){
-        simFrame.set(simFrame.get()+1);
+        renderer.saveRenderFbo(ofApp::get()->frame);
     }
     
     char m[255];
-    sprintf(m, "sim_%05d.bin", simFrame.get());
+    sprintf(m, "sim_%05d.bin", frame);
     string fileName(m);
     filesystem::path p = ofToDataPath("")/Util::getResFolder()/"sim"/"particle_rain_01"/fileName;
     p = filesystem::absolute(p);
@@ -64,14 +65,14 @@ void RfView::update(){
 }
 
 void RfView::draw(){
-    beginRenderFbo();
+    
+    renderer.beginRenderFbo();
     
     ofEnableDepthTest();
     cam.begin();
     
     ofBackground(0);
     
-    //drawModelWireframe();
     ofSetColor(255,100);
     drawWireDome(6, 12);
     drawTexDome(img.getTexture());
@@ -84,11 +85,14 @@ void RfView::draw(){
     ofPopMatrix();
     
     cam.end();
-    endRenderFbo();
-    drawRenderFbo(ofGetWidth(), ofGetHeight());
+    renderer.endRenderFbo();
     
-    drawGui();
+    renderer.drawRenderFbo(ofGetWidth(), ofGetHeight());
+    
+    ofDisableDepthTest();
+    gui.draw();
 }
+
 void RfView::exit(){
-    
+    //ofExit();
 }

@@ -8,14 +8,24 @@
 using namespace ScreenDef;
 
 void ofApp::setup(){
+
+    gui.setup("Control GUI");
+    mainPrms.add(frame.set("frame", -1, -1, 3000));
+    mainPrms.add(bStart.set("start", false));
+    gui.add(mainPrms);
     
 }
 
 void ofApp::update(){
-    frame++;
+    if(bStart.get()){
+        frame.set(frame.get()+1);
+    }
 }
 
 void ofApp::draw(){
+    ofBackground(0);
+    ofDisableDepthTest();
+    gui.draw();
 }
 
 void ofApp::keyPressed(int key){
@@ -31,26 +41,25 @@ int main(){
     ofSetLogLevel(OF_LOG_VERBOSE);
 
     int size = 500;
-    
-    // main process
     ofGLFWWindowSettings settings;
+    //settings.setGLVersion(4, 1);
+    shared_ptr<ofAppBaseWindow> mainWindow;
     settings.width = size;
-    settings.height = size;
-    settings.setPosition(ofVec2f(0,0));
+    settings.height = 280;
+    settings.setPosition(ofVec2f(0,size+65));
     settings.resizable = true;
-    //settings.decorated = false;
-    shared_ptr<ofAppBaseWindow> mainWindow = ofCreateWindow(settings); //new ofAppNoWindow()
+    mainWindow = ofCreateWindow(settings);
     shared_ptr<ofApp> mainApp = shared_ptr<ofApp>(ofApp::get());
     ofRunApp(mainWindow, mainApp);
     
     // 2D Circle TexView, Renderable
     settings.width = size;
     settings.height = size;
-    settings.setPosition(ofVec2f(0,size+65));
+    settings.setPosition(ofVec2f(0,0));
     settings.resizable = true;
     settings.shareContextWith = mainWindow;
     shared_ptr<ofAppBaseWindow> texWindow = ofCreateWindow(settings);
-    shared_ptr<TexView> texApp(new TexView(renderW, renderH, "render/tex"));
+    shared_ptr<RfTexView> texApp(new RfTexView(renderW, renderH, "render/tex"));
     ofApp::get()->texView = texApp;
     ofRunApp(texWindow, texApp);
     
@@ -67,5 +76,4 @@ int main(){
     ofRunApp(rfWindow, rfApp);
 
     ofRunMainLoop();
-
 }

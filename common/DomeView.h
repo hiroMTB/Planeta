@@ -1,16 +1,15 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxTextureRecorder.h"
-#include "Renderable.h"
 #include "ofxAssimpModelLoader.h"
+#include "ofxGui.h"
 
 namespace mikromedas{
 
-    class DomeView : public ofBaseApp, public Renderable{
+    class DomeView : public ofBaseApp{
         
     public:
-        DomeView(int w, int h, string path);
+        DomeView(){};
         virtual ~DomeView(){cout << " - Destruct DomeView"; };
         virtual void setup(){};
         virtual void update(){};
@@ -18,17 +17,21 @@ namespace mikromedas{
         virtual void exit(){};
         
         void setupModel();
-        void setupCameraGui();
+        void setupCameraGui(ofxPanel & gui);
         
         void resetCamera();
         void updateCameraSettings();
+        void drawTexDome(const ofTexture & tex);
+        void drawWireDome(int res1, int res2);
+        void bindMyTexture(const ofTexture & tex);
+        void unbindMyTexture(const ofTexture & tex);
+
+    private:
         void floatCb(float & fake);
         void vec2Cb(glm::vec2 & fake);
         void vec3Cb(glm::vec3 & fake);
 
-        void drawTexDome(const ofTexture & tex);
-        void drawWireDome(int res1, int res2);
-        
+    public:
         ofEasyCam cam;
         ofxAssimpModelLoader wire_dome;
         ofxAssimpModelLoader tex_dome;
@@ -36,7 +39,6 @@ namespace mikromedas{
         ofParameterGroup  domePrms;
         ofParameter<bool> bDrawWireFrame;
         ofParameter<bool> bDrawFaces;
-        
         ofParameter<float> nearClip;
         ofParameter<float> farClip;
         ofParameter<float> fov;
@@ -44,14 +46,10 @@ namespace mikromedas{
         ofParameter<float> pan;
         ofParameter<float> tilt;
         ofParameter<float> roll;
-
         ofParameter<glm::vec2> lensOffset;
         ofParameter<void> resetCameraBtn;
         float prevPan = 0;
         float prevTilt = 0;
         float prevRoll = 0;
-        
-        void bindMyTexture(const ofTexture & tex);
-        void unbindMyTexture(const ofTexture & tex);
     };
 }

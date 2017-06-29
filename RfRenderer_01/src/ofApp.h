@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "EasingPrm.h"
 #include "ofxGui.h"
-#include "TexView.h"
+#include "RfTexView.h"
 #include "RfView.h"
 
 using namespace mikromedas;
@@ -23,11 +23,15 @@ public:
     void keyPressed(int key);
     void exit();
     
-    int frame = -1;
     ofxPanel gui;
     vector<EasingPrm> anim;
     
-    shared_ptr<TexView> texView;
+    shared_ptr<RfTexView> texView;
     shared_ptr<RfView> rfView;
+    
+    ofParameterGroup mainPrms;
+    ofParameter<bool> bStart;
+    ofParameter<int> frame;
+
 };
 
