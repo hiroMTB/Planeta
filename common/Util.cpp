@@ -132,3 +132,31 @@ void Util::drawOpenArc(){
     
     arc.draw(OF_MESH_WIREFRAME);
 }
+
+void Util::drawGrid(float size=1){
+    
+    for(int i=0; i<11; i++){
+        float x = i * size*0.1 - size*0.5;
+        float z1 = -size/2;
+        float z2 = +size/2;
+        ofDrawLine(glm::vec3(x,0,z1), glm::vec3(x,0,z2));
+    }
+    
+    for(int i=0; i<11; i++){
+        float x1 = -size/2;
+        float x2 = +size/2;
+        float z = i*size*0.1 -size*0.5;
+        ofDrawLine(glm::vec3(x1,0,z), glm::vec3(x2,0,z));
+    }
+}
+
+void Util::drawAxis(float size = 1){
+    ofSetColor(255, 0, 0);
+    ofDrawLine(glm::vec3(0,0,0), glm::vec3(size,0,0) );
+    
+    ofSetColor(0, 255, 0);
+    ofDrawLine(glm::vec3(0,0,0), glm::vec3( 0,size,0) );
+    
+    ofSetColor(0, 0, 255);
+    ofDrawLine(glm::vec3(0,0,0), glm::vec3( 0,0,size) );
+}

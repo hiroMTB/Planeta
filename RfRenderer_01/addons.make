@@ -1,5 +1,6 @@
-ofxEasing
-ofxTextureRecorder
-ofxSvg
 ofxAssimpModelLoader
+ofxDomemaster
+ofxEasing
 ofxGui
+ofxSvg
+ofxTextureRecorder

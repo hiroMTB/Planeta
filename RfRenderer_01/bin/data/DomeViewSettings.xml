@@ -2,7 +2,7 @@
 <DomeView>
 	<Render_Parameters>
 		<render>0</render>
-		<frameRate>4</frameRate>
+		<frameRate>25</frameRate>
 		<texCopyTime>0</texCopyTime>
 		<gpuDownTime>0</gpuDownTime>
 		<encodeTime>0</encodeTime>
@@ -14,7 +14,7 @@
 		<nearClip>1.25886</nearClip>
 		<farClip>500</farClip>
 		<fov>60</fov>
-		<distance>23.7245</distance>
+		<distance>47.402</distance>
 		<pan>0</pan>
 		<tilt>-26.6327</tilt>
 		<roll>0</roll>

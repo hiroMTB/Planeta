@@ -25,4 +25,6 @@ public:
 
     static void drawOpenArc();
 
+    static void drawGrid(float size);
+    static void drawAxis(float size);
 };

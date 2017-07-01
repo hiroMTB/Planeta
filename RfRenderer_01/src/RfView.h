@@ -17,10 +17,11 @@ public:
     virtual void update() override;
     virtual void draw() override;
     virtual void exit() override;
+
+    void drawScene();
     
     RfImporterBin rf;
     
-    ofBufferObject buf;
     ofVboMesh mesh;
     
     ofImage img;

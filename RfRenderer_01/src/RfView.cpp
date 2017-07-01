@@ -3,6 +3,8 @@
 #include "ScreenDef.h"
 #include "Util.h"
 #include "ofApp.h"
+#include "RfTexView.h"
+#include "ofxDomemaster.h"
 
 using namespace mikromedas;
 using namespace ScreenDef;
@@ -65,32 +67,44 @@ void RfView::update(){
 }
 
 void RfView::draw(){
-    
     renderer.beginRenderFbo();
-    
     ofEnableDepthTest();
-    cam.begin();
-    
     ofBackground(0);
     
-    ofSetColor(255,100);
-    drawWireDome(6, 12);
-    drawTexDome(img.getTexture());
-    
-    // draw rf
-    ofPushMatrix();
-    ofSetColor(255);
-    ofTranslate(0, 2, 0);
-    mesh.drawVertices();
-    ofPopMatrix();
+    cam.begin();
+    drawScene();
     
     cam.end();
+
     renderer.endRenderFbo();
-    
     renderer.drawRenderFbo(ofGetWidth(), ofGetHeight());
-    
     ofDisableDepthTest();
     gui.draw();
+}
+
+void RfView::drawScene(){
+
+    Util::drawAxis(2);
+    
+    ofPushMatrix(); {
+        ofSetColor(255);
+        //Util::drawGrid(40);
+        
+        ofSetColor(255,100);
+        drawWireDome(6, 12);
+        
+        ofSetColor(255);
+        drawTexDome(img.getTexture());
+        
+        // draw rf
+        ofPushMatrix(); {
+            ofSetColor(255);
+            ofTranslate(0, 2, 0);
+            glPointSize(2);
+            mesh.drawVertices();
+        }ofPopMatrix();
+    
+    }ofPopMatrix();
 }
 
 void RfView::exit(){

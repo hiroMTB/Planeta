@@ -63,6 +63,7 @@ void DomeView::vec3Cb(glm::vec3 & fake){
 
 void DomeView::resetCamera(){
     cam.reset();
+    cam.setUpAxis(glm::vec3(0,0,1));
     //gui.loadFromFile("DomeViewSettings.xml");
     updateCameraSettings();
 }
