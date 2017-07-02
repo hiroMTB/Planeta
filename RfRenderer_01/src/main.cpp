@@ -11,7 +11,7 @@ int main(){
     
     ofSetLogLevel(OF_LOG_VERBOSE);
     
-    int size = 500;
+    int size = 512;
     ofGLFWWindowSettings settings;
     //settings.setGLVersion(4, 1);
     shared_ptr<ofAppBaseWindow> mainWindow;

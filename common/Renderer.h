@@ -45,6 +45,7 @@ namespace mikromedas{
             ofBackground(20);
             ofRectangle r(0, 0, fbo.getWidth(), fbo.getHeight());
             r.scaleTo( ofRectangle(0, 0, w, h) );
+            ofSetColor(255);
             fbo.draw(r);
         }
         

@@ -11,6 +11,7 @@ void ofApp::setup(){
 
     domemaster.setup();
     domemaster.setCameraPosition(0,0,10);
+    domemaster.resize(500, 500);
 }
 
 //--------------------------------------------------------------

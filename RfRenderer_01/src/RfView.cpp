@@ -101,6 +101,7 @@ void RfView::drawScene(){
             ofSetColor(255);
             ofTranslate(0, 2, 0);
             glPointSize(2);
+            ofSetColor(255);
             mesh.drawVertices();
         }ofPopMatrix();
     

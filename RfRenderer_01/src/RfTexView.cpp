@@ -22,10 +22,8 @@ void RfTexView::setup(){
     setupGui(gui);
     gui.loadFromFile("TexViewSettings.xml");
     
-    int w = renderW;
-    int h = renderH;
     domemaster.setup();
-    domemaster.resize(w, h);
+    domemaster.resize(renderW, renderH);
     domemaster.setCameraPosition(0,0,0);
 }
 
@@ -42,17 +40,14 @@ void RfTexView::update(){
 
 void RfTexView::draw(){
     ofEnableDepthTest();
-    
-    renderer.beginRenderFbo();
-    
+
     for (int i=0; i<domemaster.renderCount; i++){
         domemaster.begin(i);
-        ofPushMatrix();
         ofApp::get()->rfView->drawScene();
-        ofPopMatrix();
         domemaster.end(i);
     }
-    
+
+    renderer.beginRenderFbo();
     ofBackground(0);
     domemaster.draw();
     
@@ -67,9 +62,7 @@ void RfTexView::draw(){
 
     renderer.endRenderFbo();
     
-    ofBackground(200);
-    ofSetColor(255);
-    renderer.drawRenderFbo(ofGetWidth(), ofGetHeight());
+    renderer.drawRenderFbo(ofGetWindowWidth(), ofGetWindowHeight());
     
     ofDisableDepthTest();
     gui.draw();
