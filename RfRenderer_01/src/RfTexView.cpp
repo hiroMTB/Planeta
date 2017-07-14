@@ -39,14 +39,19 @@ void RfTexView::update(){
 }
 
 void RfTexView::draw(){
-    ofEnableDepthTest();
 
-    for (int i=0; i<domemaster.renderCount; i++){
-        domemaster.begin(i);
-        ofApp::get()->rfView->drawScene();
-        domemaster.end(i);
+    ofApp * app = ofApp::get();
+    
+    if(app->bStart.get()){
+        ofEnableDepthTest();
+
+        for (int i=0; i<domemaster.renderCount; i++){
+            domemaster.begin(i);
+            ofApp::get()->rfView->drawScene();
+            domemaster.end(i);
+        }
     }
-
+    
     renderer.beginRenderFbo();
     ofBackground(0);
     domemaster.draw();
