@@ -112,3 +112,4 @@ _settings.xml
 !/res/**/*.jpg
 !/res/**/*.jpeg
 *.yml
+obj
