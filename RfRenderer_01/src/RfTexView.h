@@ -4,9 +4,7 @@
 #include "TexView.h"
 #include "ofxDomemaster.h"
 
-using namespace mikromedas;
-
-class RfTexView : public TexView{
+class RfTexView : public mikromedas::TexView{
 
 public:
     
@@ -18,10 +16,10 @@ public:
     virtual void draw() override;
     virtual void exit() override;
     
-    void mouseDragged(int x, int y, int button);
+    void mouseDragged(int x, int y, int button) override;
 
     ofxPanel gui;
-    Renderer renderer;
+    mikromedas::Renderer renderer;
     
     ofxDomemaster domemaster;
 };

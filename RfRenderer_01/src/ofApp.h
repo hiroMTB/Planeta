@@ -1,8 +1,9 @@
 #pragma once
 
 #include "ofMain.h"
-#include "EasingPrm.h"
 #include "ofxGui.h"
+
+#include "mtb/EasingPrm.h"
 #include "RfTexView.h"
 #include "RfView.h"
 
@@ -24,7 +25,7 @@ public:
     void exit();
     
     ofxPanel gui;
-    vector<EasingPrm> anim;
+    vector<mtb::EasingPrm> anim;
     
     shared_ptr<RfTexView> texView;
     shared_ptr<RfView> rfView;

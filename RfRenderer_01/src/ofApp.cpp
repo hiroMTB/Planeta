@@ -3,9 +3,7 @@
 #include "ofAppNoWindow.h"
 #include "Util.h"
 #include "FontManager.h"
-#include "ScreenDef.h"
-
-using namespace ScreenDef;
+#include "Screen.h"
 
 void ofApp::setup(){
 

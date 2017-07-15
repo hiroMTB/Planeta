@@ -1,12 +1,10 @@
 #pragma once
 
-#include "DomeView.h"
-#include "RfImporterBin.h"
-#include "Renderer.h"
+#include "mikromedas/DomeView.h"
+#include "mikromedas/Renderer.h"
+#include "mtb/RfImporterBin.h"
 
-using namespace mikromedas;
-
-class RfView : public DomeView{
+class RfView : public mikromedas::DomeView{
     
 public:
     
@@ -20,14 +18,14 @@ public:
 
     void drawScene();
     
-    RfImporterBin rf;
+    mtb::RfImporterBin rf;
     
     ofVboMesh mesh;
     
     ofImage img;
 
     ofxPanel gui;
-    Renderer renderer;
+    mikromedas::Renderer renderer;
     
     ofParameterGroup rfPrms;
     ofParameter<int> numParticles;
