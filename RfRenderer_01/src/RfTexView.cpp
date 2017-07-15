@@ -1,12 +1,8 @@
 #include "RfTexView.h"
-#include "ScreenDef.h"
+#include "Screen.h"
 #include "Util.h"
 #include "ofApp.h"
 #include "RfView.h"
-
-
-using namespace mikromedas;
-using namespace ScreenDef;
 
 RfTexView::RfTexView(int w, int h, string path){   
     renderer.setup(w, h, path);
@@ -14,7 +10,7 @@ RfTexView::RfTexView(int w, int h, string path){
 
 void RfTexView::setup(){
     ofSetBackgroundColor(0);
-    ofSetFrameRate(fps);
+    ofSetFrameRate(mikromedas::Screen::fps);
     ofSetCircleResolution(160);
     
     gui.setup("Tex View", "TexViewSettings.xml");
@@ -23,7 +19,7 @@ void RfTexView::setup(){
     gui.loadFromFile("TexViewSettings.xml");
     
     domemaster.setup();
-    domemaster.resize(renderW, renderH);
+    domemaster.resize(mikromedas::Screen::renderW, mikromedas::Screen::renderH);
     domemaster.setCameraPosition(0,0,0);
 }
 
@@ -58,7 +54,7 @@ void RfTexView::draw(){
     
     if(bDrawGuide.get()){
         ofPushMatrix();
-        ofTranslate(centerX, centerY);
+        ofTranslate(mikromedas::Screen::centerX, mikromedas::Screen::centerY);
         ofSetColor(0,255,0);
         glLineWidth(3);
         drawGuide();

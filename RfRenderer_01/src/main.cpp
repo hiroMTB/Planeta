@@ -1,11 +1,8 @@
 #include "ofMain.h"
 #include "ofApp.h"
-#include "ScreenDef.h"
+#include "Screen.h"
 #include "RfTexView.h"
 #include "RfView.h"
-
-using namespace mikromedas;
-using namespace ScreenDef;
 
 int main(){
     
@@ -30,7 +27,7 @@ int main(){
     settings.resizable = true;
     settings.shareContextWith = mainWindow;
     shared_ptr<ofAppBaseWindow> texWindow = ofCreateWindow(settings);
-    shared_ptr<RfTexView> texApp(new RfTexView(renderW, renderH, "render/tex"));
+    shared_ptr<RfTexView> texApp(new RfTexView(mikromedas::Screen::renderW, mikromedas::Screen::renderH, "render/tex"));
     ofApp::get()->texView = texApp;
     ofRunApp(texWindow, texApp);
     

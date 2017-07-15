@@ -11,11 +11,10 @@
 		1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 907C5B5E104864A2D3A25745 /* ofxToggle.cpp */; };
 		25D1BB8E61278A31D51FC3CC /* RfView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A698A30B410C6DD56F25AF0B /* RfView.cpp */; };
 		3B8120368B4FCCD80883BAF3 /* ofxAssimpAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36068D6C1D6D412786A5C4C1 /* ofxAssimpAnimation.cpp */; };
-		459BEF5A1F06211C00FCCC64 /* DomeView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459BEF4A1F06211C00FCCC64 /* DomeView.cpp */; };
-		459BEF5B1F06211C00FCCC64 /* FontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459BEF4D1F06211C00FCCC64 /* FontManager.cpp */; };
-		459BEF5C1F06211C00FCCC64 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459BEF4F1F06211C00FCCC64 /* Graph.cpp */; };
-		459BEF5D1F06211C00FCCC64 /* TexView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459BEF561F06211C00FCCC64 /* TexView.cpp */; };
-		459BEF5E1F06211C00FCCC64 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459BEF581F06211C00FCCC64 /* Util.cpp */; };
+		452148021F1A4A9500DA1692 /* DomeView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452147FC1F1A4A9500DA1692 /* DomeView.cpp */; };
+		452148031F1A4A9500DA1692 /* TexView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452148001F1A4A9500DA1692 /* TexView.cpp */; };
+		4521480C1F1A4A9B00DA1692 /* FontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 452148051F1A4A9B00DA1692 /* FontManager.cpp */; };
+		4521480D1F1A4A9B00DA1692 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4521480A1F1A4A9B00DA1692 /* Util.cpp */; };
 		483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78D67A00EB899FAC09430597 /* ofxLabel.cpp */; };
 		483FA4F6D5FA6422C559B1F5 /* ofxAssimpMeshHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F67FE68E327BEFBD4B777571 /* ofxAssimpMeshHelper.cpp */; };
 		5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C88333E71C9457E441C33474 /* ofxButton.cpp */; };
@@ -101,23 +100,20 @@
 		42D4654C9F4C7B037E4EF91F /* RfTexView.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = RfTexView.h; path = src/RfTexView.h; sourceTree = SOURCE_ROOT; };
 		42D77E59A87937F5313E468D /* postprocess.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = postprocess.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/assimp/postprocess.h; sourceTree = SOURCE_ROOT; };
 		44B351490B620D04E1E7C52D /* ofxInputField.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxInputField.cpp; path = ../../../addons/ofxGui/src/ofxInputField.cpp; sourceTree = SOURCE_ROOT; };
-		459BEF491F06211C00FCCC64 /* AnimationParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationParts.h; sourceTree = "<group>"; };
-		459BEF4A1F06211C00FCCC64 /* DomeView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DomeView.cpp; sourceTree = "<group>"; };
-		459BEF4B1F06211C00FCCC64 /* DomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomeView.h; sourceTree = "<group>"; };
-		459BEF4C1F06211C00FCCC64 /* EasingPrm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasingPrm.h; sourceTree = "<group>"; };
-		459BEF4D1F06211C00FCCC64 /* FontManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FontManager.cpp; sourceTree = "<group>"; };
-		459BEF4E1F06211C00FCCC64 /* FontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontManager.h; sourceTree = "<group>"; };
-		459BEF4F1F06211C00FCCC64 /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
-		459BEF501F06211C00FCCC64 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
-		459BEF511F06211C00FCCC64 /* Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Renderer.h; sourceTree = "<group>"; };
-		459BEF521F06211C00FCCC64 /* RfExporterBin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfExporterBin.h; sourceTree = "<group>"; };
-		459BEF531F06211C00FCCC64 /* RfImporterBin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfImporterBin.h; sourceTree = "<group>"; };
-		459BEF541F06211C00FCCC64 /* RfImporterRpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfImporterRpc.h; sourceTree = "<group>"; };
-		459BEF551F06211C00FCCC64 /* ScreenDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenDef.h; sourceTree = "<group>"; };
-		459BEF561F06211C00FCCC64 /* TexView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TexView.cpp; sourceTree = "<group>"; };
-		459BEF571F06211C00FCCC64 /* TexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexView.h; sourceTree = "<group>"; };
-		459BEF581F06211C00FCCC64 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
-		459BEF591F06211C00FCCC64 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		452147FC1F1A4A9500DA1692 /* DomeView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DomeView.cpp; path = mikromedas/DomeView.cpp; sourceTree = "<group>"; };
+		452147FD1F1A4A9500DA1692 /* DomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DomeView.h; path = mikromedas/DomeView.h; sourceTree = "<group>"; };
+		452147FE1F1A4A9500DA1692 /* Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Renderer.h; path = mikromedas/Renderer.h; sourceTree = "<group>"; };
+		452147FF1F1A4A9500DA1692 /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Screen.h; path = mikromedas/Screen.h; sourceTree = "<group>"; };
+		452148001F1A4A9500DA1692 /* TexView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TexView.cpp; path = mikromedas/TexView.cpp; sourceTree = "<group>"; };
+		452148011F1A4A9500DA1692 /* TexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TexView.h; path = mikromedas/TexView.h; sourceTree = "<group>"; };
+		452148041F1A4A9B00DA1692 /* EasingPrm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EasingPrm.h; path = mtb/EasingPrm.h; sourceTree = "<group>"; };
+		452148051F1A4A9B00DA1692 /* FontManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FontManager.cpp; path = mtb/FontManager.cpp; sourceTree = "<group>"; };
+		452148061F1A4A9B00DA1692 /* FontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FontManager.h; path = mtb/FontManager.h; sourceTree = "<group>"; };
+		452148071F1A4A9B00DA1692 /* RfExporterBin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RfExporterBin.h; path = mtb/RfExporterBin.h; sourceTree = "<group>"; };
+		452148081F1A4A9B00DA1692 /* RfImporterBin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RfImporterBin.h; path = mtb/RfImporterBin.h; sourceTree = "<group>"; };
+		452148091F1A4A9B00DA1692 /* RfImporterRpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RfImporterRpc.h; path = mtb/RfImporterRpc.h; sourceTree = "<group>"; };
+		4521480A1F1A4A9B00DA1692 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Util.cpp; path = mtb/Util.cpp; sourceTree = "<group>"; };
+		4521480B1F1A4A9B00DA1692 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Util.h; path = mtb/Util.h; sourceTree = "<group>"; };
 		489B196944B06ADC2A071076 /* ofxColorPicker.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxColorPicker.h; path = ../../../addons/ofxGui/src/ofxColorPicker.h; sourceTree = SOURCE_ROOT; };
 		4FAE4A0F69A8990513603BDF /* ofxAssimpUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxAssimpUtils.h; path = ../../../addons/ofxAssimpModelLoader/src/ofxAssimpUtils.h; sourceTree = SOURCE_ROOT; };
 		528CB0EB22F0A199A5F479D5 /* easing_terms_of_use.html */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = easing_terms_of_use.html; path = ../../../addons/ofxEasing/src/easing_terms_of_use.html; sourceTree = SOURCE_ROOT; };
@@ -363,26 +359,39 @@
 			name = include;
 			sourceTree = "<group>";
 		};
+		452147FA1F1A4A8000DA1692 /* mtb */ = {
+			isa = PBXGroup;
+			children = (
+				452148041F1A4A9B00DA1692 /* EasingPrm.h */,
+				452148051F1A4A9B00DA1692 /* FontManager.cpp */,
+				452148061F1A4A9B00DA1692 /* FontManager.h */,
+				452148071F1A4A9B00DA1692 /* RfExporterBin.h */,
+				452148081F1A4A9B00DA1692 /* RfImporterBin.h */,
+				452148091F1A4A9B00DA1692 /* RfImporterRpc.h */,
+				4521480A1F1A4A9B00DA1692 /* Util.cpp */,
+				4521480B1F1A4A9B00DA1692 /* Util.h */,
+			);
+			name = mtb;
+			sourceTree = "<group>";
+		};
+		452147FB1F1A4A8B00DA1692 /* mikromedas */ = {
+			isa = PBXGroup;
+			children = (
+				452147FC1F1A4A9500DA1692 /* DomeView.cpp */,
+				452147FD1F1A4A9500DA1692 /* DomeView.h */,
+				452147FE1F1A4A9500DA1692 /* Renderer.h */,
+				452147FF1F1A4A9500DA1692 /* Screen.h */,
+				452148001F1A4A9500DA1692 /* TexView.cpp */,
+				452148011F1A4A9500DA1692 /* TexView.h */,
+			);
+			name = mikromedas;
+			sourceTree = "<group>";
+		};
 		459BEF481F06211C00FCCC64 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				459BEF491F06211C00FCCC64 /* AnimationParts.h */,
-				459BEF4A1F06211C00FCCC64 /* DomeView.cpp */,
-				459BEF4B1F06211C00FCCC64 /* DomeView.h */,
-				459BEF4C1F06211C00FCCC64 /* EasingPrm.h */,
-				459BEF4D1F06211C00FCCC64 /* FontManager.cpp */,
-				459BEF4E1F06211C00FCCC64 /* FontManager.h */,
-				459BEF4F1F06211C00FCCC64 /* Graph.cpp */,
-				459BEF501F06211C00FCCC64 /* Graph.h */,
-				459BEF511F06211C00FCCC64 /* Renderer.h */,
-				459BEF521F06211C00FCCC64 /* RfExporterBin.h */,
-				459BEF531F06211C00FCCC64 /* RfImporterBin.h */,
-				459BEF541F06211C00FCCC64 /* RfImporterRpc.h */,
-				459BEF551F06211C00FCCC64 /* ScreenDef.h */,
-				459BEF561F06211C00FCCC64 /* TexView.cpp */,
-				459BEF571F06211C00FCCC64 /* TexView.h */,
-				459BEF581F06211C00FCCC64 /* Util.cpp */,
-				459BEF591F06211C00FCCC64 /* Util.h */,
+				452147FB1F1A4A8B00DA1692 /* mikromedas */,
+				452147FA1F1A4A8000DA1692 /* mtb */,
 			);
 			name = common;
 			path = ../../common;
@@ -749,12 +758,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				459BEF5E1F06211C00FCCC64 /* Util.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
-				459BEF5A1F06211C00FCCC64 /* DomeView.cpp in Sources */,
-				459BEF5B1F06211C00FCCC64 /* FontManager.cpp in Sources */,
+				452148021F1A4A9500DA1692 /* DomeView.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
-				459BEF5C1F06211C00FCCC64 /* Graph.cpp in Sources */,
+				4521480D1F1A4A9B00DA1692 /* Util.cpp in Sources */,
 				C0BEC2F3549FCEB655B6C1DB /* RfTexView.cpp in Sources */,
 				25D1BB8E61278A31D51FC3CC /* RfView.cpp in Sources */,
 				3B8120368B4FCCD80883BAF3 /* ofxAssimpAnimation.cpp in Sources */,
@@ -764,11 +771,12 @@
 				70DA42C4499ED491102E845F /* ofxDomemaster.cpp in Sources */,
 				08C23182D394C53F6ECE6CCC /* easing_terms_of_use.html in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
+				4521480C1F1A4A9B00DA1692 /* FontManager.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				853E0BA2F448076739446874 /* ofxColorPicker.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				852E0891794923EE7583C621 /* ofxInputField.cpp in Sources */,
-				459BEF5D1F06211C00FCCC64 /* TexView.cpp in Sources */,
+				452148031F1A4A9500DA1692 /* TexView.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
@@ -813,6 +821,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
+					../common,
 					src,
 					../../../addons/ofxAssimpModelLoader/libs,
 					../../../addons/ofxAssimpModelLoader/libs/assimp,
@@ -872,6 +881,7 @@
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "APPSTORE=1";
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
+					../common,
 					src,
 					../../../addons/ofxAssimpModelLoader/libs,
 					../../../addons/ofxAssimpModelLoader/libs/assimp,
@@ -942,6 +952,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
+					../common,
 					src,
 					../../../addons/ofxAssimpModelLoader/libs,
 					../../../addons/ofxAssimpModelLoader/libs/assimp,
@@ -1012,6 +1023,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
+					../common,
 					src,
 					../../../addons/ofxAssimpModelLoader/libs,
 					../../../addons/ofxAssimpModelLoader/libs/assimp,
@@ -1071,6 +1083,7 @@
 				GCC_MODEL_TUNING = NONE;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
+					../common,
 					src,
 					../../../addons/ofxAssimpModelLoader/libs,
 					../../../addons/ofxAssimpModelLoader/libs/assimp,
@@ -1130,6 +1143,7 @@
 				GCC_MODEL_TUNING = NONE;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
+					../common,
 					src,
 					../../../addons/ofxAssimpModelLoader/libs,
 					../../../addons/ofxAssimpModelLoader/libs/assimp,
