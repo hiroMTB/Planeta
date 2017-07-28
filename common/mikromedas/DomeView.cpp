@@ -140,7 +140,7 @@ namespace mikromedas{
                 float x = rad * cos(ofDegToRad(angle));
                 float y = rad * sin(ofDegToRad(angle));
                 ofPushMatrix();
-                ofTranslate(0, 2, 0);
+                //ofTranslate(0, 2, 0);
                 ofRotateXDeg(90);
                 ofTranslate(0, 0, -abs(y));
                 ofNoFill();
@@ -152,7 +152,7 @@ namespace mikromedas{
                 float res = res2;
                 ofNoFill();
                 ofPushMatrix();
-                ofTranslate(0, 2, 0);
+                //ofTranslate(0, 2, 0);
                 ofScale(rad, rad, rad);
                 for(int i=0; i<res; i++){
                     float angle = 180.0/res;

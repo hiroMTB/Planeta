@@ -20,7 +20,8 @@ public:
     
     mtb::RfImporterBin rf;
     
-    ofVboMesh mesh;
+    ofVboMesh points;
+    ofVboMesh lines;
     
     ofImage img;
 

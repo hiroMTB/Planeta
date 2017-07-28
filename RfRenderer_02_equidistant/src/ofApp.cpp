@@ -1,4 +1,3 @@
-//#define MAX_QUALITY 1
 #include "ofApp.h"
 #include "ofAppNoWindow.h"
 #include "Util.h"

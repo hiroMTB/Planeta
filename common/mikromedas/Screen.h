@@ -3,6 +3,7 @@
 #include "ofMain.h"
 
 //#define MAX_QUALITY 1
+
 namespace mikromedas{
     
     struct Screen{
@@ -14,8 +15,8 @@ namespace mikromedas{
         static constexpr float centerY = renderH/2;
         static constexpr int fps = 25;
 #else
-        static constexpr float renderW = 1024;
-        static constexpr float renderH = 1024;
+        static constexpr float renderW = 1024*2;
+        static constexpr float renderH = 1024*2;
         static constexpr float centerX = renderW/2;
         static constexpr float centerY = renderH/2;
         static constexpr int fps = 25;

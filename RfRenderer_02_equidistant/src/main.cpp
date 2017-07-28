@@ -8,13 +8,15 @@ int main(){
     
     ofSetLogLevel(OF_LOG_VERBOSE);
     
-    int size = 512;
+    int size = 1024;
+    int width3dView = 1920-size;
+    int height3dView = width3dView/(1920.0/1080.0);
     ofGLFWWindowSettings settings;
     //settings.setGLVersion(4, 1);
     shared_ptr<ofAppBaseWindow> mainWindow;
-    settings.width = size;
-    settings.height = 280;
-    settings.setPosition(ofVec2f(0,size+65));
+    settings.width = 1920-size;
+    settings.height = 200;
+    settings.setPosition(ofVec2f(size,height3dView+65));
     settings.resizable = true;
     mainWindow = ofCreateWindow(settings);
     shared_ptr<ofApp> mainApp = shared_ptr<ofApp>(ofApp::get());
@@ -32,8 +34,8 @@ int main(){
     ofRunApp(texWindow, texApp);
     
     // 3D Dome View, Renderable
-    settings.width = 1920-size;
-    settings.height = settings.width/(1920/1080.0);
+    settings.width = width3dView;
+    settings.height = height3dView;
     settings.setPosition(ofVec2f(size,0));
     settings.resizable = true;
     settings.shareContextWith = mainWindow;

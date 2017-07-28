@@ -20,7 +20,7 @@ void RfTexView::setup(){
     
     domemaster.setup();
     domemaster.resize(mikromedas::Screen::renderW, mikromedas::Screen::renderH);
-    domemaster.setCameraPosition(0,0,0);
+    domemaster.setCameraPosition(0,2,0);
 }
 
 void RfTexView::update(){

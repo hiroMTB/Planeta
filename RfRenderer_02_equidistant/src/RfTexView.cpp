@@ -23,8 +23,11 @@ void RfTexView::setup(){
     
     if(!equi.setup()){ std::terminate();}
     
-    equi.getCamera().lookAt(vec3(0,10,0), vec3(0,0,1));
     equi.getCamera().setPosition(0,0,0);
+    equi.getCamera().lookAt(vec3(0,10,0), vec3(0,0,1));
+    
+    mask.load(mtb::Util::getResFolder()/"img"/"mask.png");
+
 }
 
 void RfTexView::update(){
@@ -39,7 +42,6 @@ void RfTexView::update(){
 }
 
 void RfTexView::draw(){
-
     ofApp * app = ofApp::get();
     
     renderer.beginRenderFbo();
@@ -54,6 +56,9 @@ void RfTexView::draw(){
     ofApp::get()->rfView->drawScene();
     equi.end(ShaderType::POINT_SHADER);
 
+    ofDisableDepthTest();
+    mask.draw(0,0,renderer.getWidth(), renderer.getHeight());
+    
     if(bDrawGuide.get()){
         ofPushMatrix();
         ofTranslate(mikromedas::Screen::centerX, mikromedas::Screen::centerY);

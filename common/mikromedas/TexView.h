@@ -19,5 +19,7 @@ namespace mikromedas{
         void setupGui(ofxPanel & gui);
         ofParameterGroup  texPrms;
         ofParameter<bool> bDrawGuide;
+        
+        ofImage mask;
     };
 }

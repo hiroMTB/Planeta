@@ -70,6 +70,14 @@ namespace mikromedas{
             render.set(false);
             recorder.stop();
         }
+        
+        int getWidth(){
+            return fbo.getWidth();
+        }
+        
+        int getHeight(){
+            return fbo.getHeight();
+        }
 
         ofParameterGroup   renderPrms;
         ofFbo fbo;
