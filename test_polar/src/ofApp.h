@@ -1,8 +1,13 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxTextureRecorder.h"
-#include "EasingPrm.h"
+#include "ofxGui.h"
+
+#include "mikromedas/Renderer.h"
+#include "mtb/EasingPrm.h"
+
+using namespace mikromedas;
+using namespace mtb;
 
 class ofApp : public ofBaseApp{
     
@@ -19,11 +24,13 @@ public:
     void keyPressed(int key){};
     void exit();
     
-    ofxTextureRecorder recorder;
+    Renderer renderer;
     ofFbo fbo;
     
     int frame = -1;
     
-    vector<EasingPrm> anim;
+    vector<mtb::EasingPrm> anim;
+
+    ofxPanel gui;
 };
 
