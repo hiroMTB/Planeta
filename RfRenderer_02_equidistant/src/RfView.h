@@ -17,6 +17,7 @@ public:
     virtual void exit() override;
 
     void drawScene();
+    void drawTexture();
     
     mtb::RfImporterBin rf;
     

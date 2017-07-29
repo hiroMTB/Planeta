@@ -44,9 +44,9 @@ void RfView::update(){
     }
     
     char m[255];
-    sprintf(m, "sim_%05d.bin", frame);
+    sprintf(m, "sim_%05d.bin", 580-frame);
     string fileName(m);
-    filesystem::path p = ofToDataPath("")/mtb::Util::getResFolder()/"sim"/"particle_rain_01"/fileName;
+    filesystem::path p = mtb::Util::getResFolder()/"sim"/"particle_rain_01"/fileName;
     p = filesystem::absolute(p);
     ofFile f(p);
     if(f.exists()){
@@ -58,11 +58,12 @@ void RfView::update(){
         
         glm::vec3 topPoint(0,23,0);
         
-        float yLimit = 10;
+        float yLimitHorizon = 23*sin(ofDegToRad(30));
+        float yLimitTop = 23*sin(ofDegToRad(90-20));
         
         for(int i=0; i<rf.pPosition.size()/3; i++){
             
-            if(i%10==1){
+            if(1){
                 float x = rf.pPosition[i*3+0];
                 float y = rf.pPosition[i*3+1];
                 float z = rf.pPosition[i*3+2];
@@ -70,24 +71,38 @@ void RfView::update(){
                 glm::vec3 pos(x,y,z);
                 pos *= scale;
 
-                if( yLimit > pos.y )
+                if( yLimitHorizon>=pos.y || yLimitTop<=pos.y)
                     continue;
                 
                 float dist = glm::distance(pos, topPoint);
-                float alpha = ofMap(dist, 5, (23*1.414), 0, 255);
+                float alpha = 255; //ofMap(dist, 5, (23*1.414), 0, 255);
 
                 points.addVertex(pos);
                 points.addColor(ofColor(255, alpha));
                 
-                // add line from top point
-                if( yLimit<=pos.y && pos.y<yLimit+1 ){
-                    
-                    glm::vec3 dir = pos-topPoint;
+                // add line from top
+                if( yLimitTop-0.05<pos.y && pos.y<yLimitTop){
+                    glm::vec3 plot(pos.x, yLimitTop, pos.z);
+                    glm::vec3 dir = topPoint-plot;
                     glm::normalize(dir);
-                    lines.addVertex(pos);
-                    lines.addVertex(pos+dir*20);
+                    lines.addVertex(plot);
+                    lines.addVertex(plot+dir*0.5);
                     
-                    float lineAlpha = 100 + ofRandom(10,40);
+                    float lineAlpha = 160 + ofRandom(-20,20);
+                    lines.addColor(ofColor(255, lineAlpha));
+                    lines.addColor(ofColor(255, lineAlpha));
+                }
+                
+                // add line from horizon
+                if( yLimitHorizon<pos.y && pos.y<yLimitHorizon+0.1 ){
+                    glm::vec3 plot(pos.x, yLimitHorizon, pos.z);
+                    
+                    glm::vec3 dir = plot-topPoint;
+                    glm::normalize(dir);
+                    lines.addVertex(plot);
+                    lines.addVertex(plot+dir*20);
+                    
+                    float lineAlpha = 160 + ofRandom(-20,20);
                     lines.addColor(ofColor(255, lineAlpha));
                     lines.addColor(ofColor(255, lineAlpha));
                 }
@@ -96,6 +111,7 @@ void RfView::update(){
         
         numParticles.set(rf.pPosition.size()/3);
     }
+    
 }
 
 void RfView::draw(){
@@ -104,8 +120,8 @@ void RfView::draw(){
     ofBackground(0);
     
     cam.begin();
-    drawScene();
-    
+    if(bDrawScene) drawScene();
+    if(bDrawFaces) drawTexture();
     cam.end();
 
     renderer.endRenderFbo();
@@ -114,22 +130,24 @@ void RfView::draw(){
     gui.draw();
 }
 
+void RfView::drawTexture(){
+    ofSetColor(255);
+    drawTexDome( ofApp::get()->texView->renderer.fbo.getTexture());
+}
+
 void RfView::drawScene(){
     
     ofDisableSmoothing();
     ofDisableAntiAliasing();
 
-    mtb::Util::drawAxis(2);
+    //mtb::Util::drawAxis(2);
     
     ofPushMatrix(); {
         ofSetColor(255);
         //Util::drawGrid(40);
         
         ofSetColor(255,100);
-        drawWireDome(6, 12);
-        
-        ofSetColor(255);
-        drawTexDome(img.getTexture());
+        drawWireDome(12, 12);
         
         // draw rf
         ofPushMatrix(); {

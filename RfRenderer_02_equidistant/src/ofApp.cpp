@@ -7,7 +7,7 @@
 void ofApp::setup(){
 
     gui.setup("Control GUI");
-    mainPrms.add(frame.set("frame", -1, -1, 3000));
+    mainPrms.add(frame.set("frame", -1, -1, 1000));
     mainPrms.add(bStart.set("start", false));
     gui.add(mainPrms);
     
