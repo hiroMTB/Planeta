@@ -2,27 +2,28 @@
 <DomeView>
 	<Render_Parameters>
 		<render>0</render>
-		<frameRate>6</frameRate>
+		<frameRate>3</frameRate>
 		<texCopyTime>0</texCopyTime>
 		<gpuDownTime>0</gpuDownTime>
 		<encodeTime>0</encodeTime>
 		<fileSaveTime>0</fileSaveTime>
 	</Render_Parameters>
 	<DomeView_Prameters>
-		<drawWireFrame>1</drawWireFrame>
-		<drawFaces>0</drawFaces>
+		<drawWireFrame>0</drawWireFrame>
+		<drawFaces>1</drawFaces>
 		<nearClip>1.25886</nearClip>
 		<farClip>500</farClip>
 		<fov>60</fov>
 		<distance>22.9592</distance>
 		<pan>0</pan>
 		<tilt>-38.5714</tilt>
-		<roll>0</roll>
-		<lensOffset>0, 9.39192</lensOffset>
+		<roll>0.252551</roll>
+		<lensOffset>0, 4.18575</lensOffset>
+		<draw_Scene>0</draw_Scene>
 	</DomeView_Prameters>
 	<group>
 		<start>1</start>
 		<frame>191</frame>
-		<num_particles>81063</num_particles>
+		<num_particles>223712</num_particles>
 	</group>
 </DomeView>
