@@ -6,12 +6,12 @@
 namespace mikromedas{
     
     void DomeView::setupModel(){
-        string fileName = "tex-dome.obj";
+        string fileName = "tex-dome-90_72.obj";
         filesystem::path path = mtb::Util::getResFolder()/"3dModel"/fileName;
         tex_dome.setScaleNormalization(false);
         tex_dome.loadModel(path.string());
         tex_dome.setRotation(0, 180, 1, 0, 0);
-        tex_dome.setPosition(0, 2, 0);
+        tex_dome.setPosition(0, 0, 0);
         tex_dome.setScale(23, 23, 23);
     }
     
@@ -19,6 +19,7 @@ namespace mikromedas{
         domePrms.setName("DomeView Prameters");
         
         domePrms.add(bDrawWireFrame.set("drawWireFrame", true));
+        domePrms.add(bDrawScene.set("draw Scene", true));
         domePrms.add(bDrawFaces.set("drawFaces", true));
         
         domePrms.add(nearClip.set("nearClip", 10, 0.0001, 20));

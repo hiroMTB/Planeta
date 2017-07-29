@@ -38,7 +38,9 @@ namespace mikromedas{
         
         ofParameterGroup  domePrms;
         ofParameter<bool> bDrawWireFrame;
+        ofParameter<bool> bDrawScene;
         ofParameter<bool> bDrawFaces;
+
         ofParameter<float> nearClip;
         ofParameter<float> farClip;
         ofParameter<float> fov;
