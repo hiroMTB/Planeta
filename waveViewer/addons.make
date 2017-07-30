@@ -1,0 +1,4 @@
+ofxEasing
+ofxGui
+ofxSvg
+ofxTextureRecorder
