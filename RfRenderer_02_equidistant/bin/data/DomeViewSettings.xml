@@ -2,7 +2,7 @@
 <DomeView>
 	<Render_Parameters>
 		<render>0</render>
-		<frameRate>3</frameRate>
+		<frameRate>25</frameRate>
 		<texCopyTime>0</texCopyTime>
 		<gpuDownTime>0</gpuDownTime>
 		<encodeTime>0</encodeTime>
@@ -20,6 +20,8 @@
 		<roll>0.252551</roll>
 		<lensOffset>0, 4.18575</lensOffset>
 		<draw_Scene>0</draw_Scene>
+		<draw_Faces>1</draw_Faces>
+		<draw_Axis>0</draw_Axis>
 	</DomeView_Prameters>
 	<group>
 		<start>1</start>

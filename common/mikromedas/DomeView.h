@@ -40,6 +40,7 @@ namespace mikromedas{
         ofParameter<bool> bDrawWireFrame;
         ofParameter<bool> bDrawScene;
         ofParameter<bool> bDrawFaces;
+        ofParameter<bool> bDrawAxis;
 
         ofParameter<float> nearClip;
         ofParameter<float> farClip;

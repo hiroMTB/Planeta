@@ -15,8 +15,10 @@ void ofApp::setup(){
 
 void ofApp::update(){
     if(bStart.get()){
-        frame.set(frame.get()+1);
+        frame.set(frame);
+        frame++;
     }
+    
 }
 
 void ofApp::draw(){

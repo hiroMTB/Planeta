@@ -40,7 +40,7 @@ void RfView::update(){
     renderer.update();
 
     if(bStart){
-        renderer.saveRenderFbo(ofApp::get()->frame);
+        renderer.saveRenderFbo(frame);
     }
     
     char m[255];
@@ -100,7 +100,7 @@ void RfView::update(){
                     glm::vec3 dir = plot-topPoint;
                     glm::normalize(dir);
                     lines.addVertex(plot);
-                    lines.addVertex(plot+dir*20);
+                    lines.addVertex(plot+dir*2);
                     
                     float lineAlpha = 160 + ofRandom(-20,20);
                     lines.addColor(ofColor(255, lineAlpha));
@@ -139,8 +139,10 @@ void RfView::drawScene(){
     
     ofDisableSmoothing();
     ofDisableAntiAliasing();
-
-    //mtb::Util::drawAxis(2);
+    
+    if(bDrawAxis){
+        mtb::Util::drawAxis(23);
+    }
     
     ofPushMatrix(); {
         ofSetColor(255);

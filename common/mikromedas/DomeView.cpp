@@ -11,6 +11,7 @@ namespace mikromedas{
         tex_dome.setScaleNormalization(false);
         tex_dome.loadModel(path.string());
         tex_dome.setRotation(0, 180, 1, 0, 0);
+        tex_dome.setRotation(1, 53.83, 0, 1, 0); // blender bug??
         tex_dome.setPosition(0, 0, 0);
         tex_dome.setScale(23, 23, 23);
     }
@@ -20,7 +21,8 @@ namespace mikromedas{
         
         domePrms.add(bDrawWireFrame.set("drawWireFrame", true));
         domePrms.add(bDrawScene.set("draw Scene", true));
-        domePrms.add(bDrawFaces.set("drawFaces", true));
+        domePrms.add(bDrawFaces.set("draw Faces", true));
+        domePrms.add(bDrawAxis.set("draw Axis", true));
         
         domePrms.add(nearClip.set("nearClip", 10, 0.0001, 20));
         domePrms.add(farClip.set("farClip", 500, 100, 1000));
@@ -110,7 +112,7 @@ namespace mikromedas{
     }
     
     void DomeView::drawTexDome(const ofTexture & tex){
-        if(bDrawFaces.get()){
+        if(bDrawFaces){
             ofNoFill();
             ofSetColor(255);
             bindMyTexture(tex);

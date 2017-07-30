@@ -37,7 +37,7 @@ void RfTexView::update(){
     renderer.update();
     
     if(bStart){        
-        renderer.saveRenderFbo(ofApp::get()->frame);
+        renderer.saveRenderFbo(frame);
     }
 }
 
