@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
 #include "ofxGui.h"
+#include "HemiSphere.h"
 
 namespace mikromedas{
 
@@ -54,5 +55,9 @@ namespace mikromedas{
         float prevPan = 0;
         float prevTilt = 0;
         float prevRoll = 0;
+        
+        
+        ofHemiSpherePrimitive hemi;
     };
+    
 }
