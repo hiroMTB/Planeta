@@ -41,7 +41,7 @@ void RfView::update(){
     char m[255];
     sprintf(m, "sim_%05d.bin", frame);
     string fileName(m);
-    filesystem::path p = ofToDataPath("")/mtb::Util::getResFolder()/"sim"/"particle_rain_01"/fileName;
+    filesystem::path p = mtb::Util::getResFolder()/"sim"/"particle_rain_01"/fileName;
     p = filesystem::absolute(p);
     ofFile f(p);
     if(f.exists()){
