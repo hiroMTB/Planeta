@@ -5,15 +5,15 @@
 
 namespace mikromedas{
     
-    void DomeView::setupModel(){
-        string fileName = "tex-dome-90_72.obj";
-        filesystem::path path = mtb::Util::getResFolder()/"3dModel"/fileName;
-        tex_dome.setScaleNormalization(false);
-        tex_dome.loadModel(path.string());
-        tex_dome.setRotation(0, 180, 1, 0, 0);
-        tex_dome.setRotation(1, 53.83, 0, 1, 0); // blender bug??
-        tex_dome.setPosition(0, 0, 0);
-        tex_dome.setScale(23, 23, 23);
+    void DomeView::setupModel(){        
+        //hemi.setUseVbo(true);
+        hemi.setRadius(23);
+        hemi.setResolution(24);
+
+        int n = hemi.getMesh().getVertices().size();
+        for(int i=0; i<n; i++){
+            hemi.getMesh().addColor(ofFloatColor(1,1,1,1));
+        }
     }
     
     void DomeView::setupCameraGui(ofxPanel & gui){
@@ -116,22 +116,12 @@ namespace mikromedas{
             ofNoFill();
             ofSetColor(255);
             bindMyTexture(tex);
-            tex_dome.draw(OF_MESH_FILL);
+            hemi.draw(OF_MESH_FILL);
             unbindMyTexture(tex);
         }
     }
     
     void DomeView::drawWireDome(int res1, int res2){
-        
-        if(0){
-            ofNoFill();
-            ofSetColor(255, 100);
-            wire_dome.drawWireframe();
-            ofPushMatrix();
-            ofRotateXDeg(90);
-            ofDrawCircle(0, 0, 23);
-            ofPopMatrix();
-        }
         
         if(bDrawWireFrame.get()){
             
@@ -143,7 +133,6 @@ namespace mikromedas{
                 float x = rad * cos(ofDegToRad(angle));
                 float y = rad * sin(ofDegToRad(angle));
                 ofPushMatrix();
-                //ofTranslate(0, 2, 0);
                 ofRotateXDeg(90);
                 ofTranslate(0, 0, -abs(y));
                 ofNoFill();
@@ -155,7 +144,6 @@ namespace mikromedas{
                 float res = res2;
                 ofNoFill();
                 ofPushMatrix();
-                //ofTranslate(0, 2, 0);
                 ofScale(rad, rad, rad);
                 for(int i=0; i<res; i++){
                     float angle = 180.0/res;

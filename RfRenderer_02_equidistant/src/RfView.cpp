@@ -149,7 +149,7 @@ void RfView::drawScene(){
         //Util::drawGrid(40);
         
         ofSetColor(255,100);
-        drawWireDome(12, 12);
+        drawWireDome(12, 24);
         
         // draw rf
         ofPushMatrix(); {

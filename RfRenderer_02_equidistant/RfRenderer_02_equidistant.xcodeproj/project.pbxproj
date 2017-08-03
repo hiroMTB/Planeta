@@ -11,6 +11,7 @@
 		1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 907C5B5E104864A2D3A25745 /* ofxToggle.cpp */; };
 		25D1BB8E61278A31D51FC3CC /* RfView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A698A30B410C6DD56F25AF0B /* RfView.cpp */; };
 		3B8120368B4FCCD80883BAF3 /* ofxAssimpAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36068D6C1D6D412786A5C4C1 /* ofxAssimpAnimation.cpp */; };
+		45326E801F335C0900220CF5 /* HemiSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45326E7F1F335C0900220CF5 /* HemiSphere.cpp */; };
 		4560836E1F2B59D900B44C42 /* DomeView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4560835F1F2B59D900B44C42 /* DomeView.cpp */; };
 		4560836F1F2B59D900B44C42 /* TexView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456083631F2B59D900B44C42 /* TexView.cpp */; };
 		456083701F2B59D900B44C42 /* FontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456083671F2B59D900B44C42 /* FontManager.cpp */; };
@@ -99,6 +100,7 @@
 		42D4654C9F4C7B037E4EF91F /* RfTexView.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = RfTexView.h; path = src/RfTexView.h; sourceTree = SOURCE_ROOT; };
 		42D77E59A87937F5313E468D /* postprocess.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = postprocess.h; path = ../../../addons/ofxAssimpModelLoader/libs/assimp/include/assimp/postprocess.h; sourceTree = SOURCE_ROOT; };
 		44B351490B620D04E1E7C52D /* ofxInputField.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxInputField.cpp; path = ../../../addons/ofxGui/src/ofxInputField.cpp; sourceTree = SOURCE_ROOT; };
+		45326E7F1F335C0900220CF5 /* HemiSphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HemiSphere.cpp; sourceTree = "<group>"; };
 		4560835F1F2B59D900B44C42 /* DomeView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DomeView.cpp; sourceTree = "<group>"; };
 		456083601F2B59D900B44C42 /* DomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomeView.h; sourceTree = "<group>"; };
 		456083611F2B59D900B44C42 /* Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Renderer.h; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		4560836B1F2B59D900B44C42 /* RfImporterRpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfImporterRpc.h; sourceTree = "<group>"; };
 		4560836C1F2B59D900B44C42 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
 		4560836D1F2B59D900B44C42 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		456A36FA1F322AC600CBC170 /* HemiSphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HemiSphere.h; sourceTree = "<group>"; };
 		489B196944B06ADC2A071076 /* ofxColorPicker.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxColorPicker.h; path = ../../../addons/ofxGui/src/ofxColorPicker.h; sourceTree = SOURCE_ROOT; };
 		4FAE4A0F69A8990513603BDF /* ofxAssimpUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxAssimpUtils.h; path = ../../../addons/ofxAssimpModelLoader/src/ofxAssimpUtils.h; sourceTree = SOURCE_ROOT; };
 		528CB0EB22F0A199A5F479D5 /* easing_terms_of_use.html */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = easing_terms_of_use.html; path = ../../../addons/ofxEasing/src/easing_terms_of_use.html; sourceTree = SOURCE_ROOT; };
@@ -375,6 +378,8 @@
 				456083621F2B59D900B44C42 /* Screen.h */,
 				456083631F2B59D900B44C42 /* TexView.cpp */,
 				456083641F2B59D900B44C42 /* TexView.h */,
+				456A36FA1F322AC600CBC170 /* HemiSphere.h */,
+				45326E7F1F335C0900220CF5 /* HemiSphere.cpp */,
 			);
 			path = mikromedas;
 			sourceTree = "<group>";
@@ -770,6 +775,7 @@
 				08C23182D394C53F6ECE6CCC /* easing_terms_of_use.html in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
+				45326E801F335C0900220CF5 /* HemiSphere.cpp in Sources */,
 				853E0BA2F448076739446874 /* ofxColorPicker.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				852E0891794923EE7583C621 /* ofxInputField.cpp in Sources */,

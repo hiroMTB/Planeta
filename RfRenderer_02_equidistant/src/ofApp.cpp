@@ -14,7 +14,7 @@ void ofApp::setup(){
 }
 
 void ofApp::update(){
-    if(bStart.get()){
+    if(bStart){
         frame.set(frame);
         frame++;
     }

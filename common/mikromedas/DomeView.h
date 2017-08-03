@@ -34,8 +34,6 @@ namespace mikromedas{
 
     public:
         ofEasyCam cam;
-        ofxAssimpModelLoader wire_dome;
-        ofxAssimpModelLoader tex_dome;
         
         ofParameterGroup  domePrms;
         ofParameter<bool> bDrawWireFrame;
@@ -56,8 +54,8 @@ namespace mikromedas{
         float prevTilt = 0;
         float prevRoll = 0;
         
-        
         ofHemiSpherePrimitive hemi;
+
     };
     
 }
