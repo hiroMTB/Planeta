@@ -5,7 +5,7 @@
 
 namespace mikromedas{
     
-    void DomeView::setupModel(){        
+    void DomeView::setupModel(){
         //hemi.setUseVbo(true);
         hemi.setRadius(23);
         hemi.setResolution(24);

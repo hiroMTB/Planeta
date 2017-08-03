@@ -41,7 +41,7 @@ int main(){
     settings.shareContextWith = mainWindow;
     
     shared_ptr<ofAppBaseWindow> rfWindow = ofCreateWindow(settings);
-    shared_ptr<RfView> rfApp(new RfView(1920, 1080, "render/dome"));
+    shared_ptr<RfView> rfApp(new RfView(1920*2, 1080*2, "render/dome"));
     ofApp::get()->rfView = rfApp;
     ofRunApp(rfWindow, rfApp);
     
