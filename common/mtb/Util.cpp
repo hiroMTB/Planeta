@@ -90,7 +90,7 @@ namespace mtb{
     }
     
     filesystem::path Util::getResFolder(){
-        return filesystem::path("/Volumes/Mikromedas/code/res/");
+        return filesystem::path("/Volumes/HrsPortable/projects/Planeta/code/res/");
     }
     
     string Util::replaceAll(std::string str, const std::string& from, const std::string& to) {
